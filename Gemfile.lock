@@ -2,9 +2,15 @@ GEM
   remote: http://rubygems.org/
   specs:
     blankslate (2.1.2.4)
+    breakpoint (2.0.7)
+      compass (>= 0.12.1)
+      sass (>= 3.2.0)
     chunky_png (1.2.8)
     classifier (1.3.3)
       fast-stemmer (>= 1.0.0)
+    color-schemer (0.2.7)
+      compass (~> 0.12)
+      compass-blend-modes (~> 0.0.2)
     colorator (0.1)
     colorize (0.6.0)
     commander (4.1.5)
@@ -13,6 +19,8 @@ GEM
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.1)
+    compass-blend-modes (0.0.2)
+      compass
     csscss (1.3.2)
       colorize
       parslet (~> 1.5)
@@ -41,6 +49,18 @@ GEM
     redcarpet (2.3.0)
     safe_yaml (0.7.1)
     sass (3.2.12)
+    sassy-strings (1.0.0)
+      compass (>= 0.12.2)
+    singularitygs (1.1.2)
+      breakpoint (>= 2.0.1)
+      compass (>= 0.12.2)
+      sass (>= 3.2.1)
+    toolkit (1.3.8)
+      breakpoint (>= 2.0.6)
+      color-schemer (>= 0.2.7)
+      compass (>= 0.12.2)
+      sassy-strings (>= 1.0.0)
+      singularitygs (>= 1.1.2)
     yajl-ruby (1.1.0)
 
 PLATFORMS
@@ -51,3 +71,5 @@ DEPENDENCIES
   csscss (~> 1.3)
   jekyll (~> 1.0)
   redcarpet
+  singularitygs
+  toolkit (~> 1.3.5)
