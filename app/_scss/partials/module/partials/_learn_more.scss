@@ -1,0 +1,30 @@
+.about-site-info {
+  width: 100%;
+  height: auto;
+  background-color: $color-about-bg;
+  margin-top: 20px;
+  position: relative;
+
+
+  .text {
+    float: left;
+    width: 65%;
+    height: auto;
+    color: #fff;
+  }
+
+  .btn {
+    float: none;
+    display: inline-block;
+    width: 35%;
+    height: 100%;
+    background-color: $color-about-btn;
+    text-align: center;
+
+    .btn-learn-more {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+}

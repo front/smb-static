@@ -1,3 +1,11 @@
 // Border box sizing
 * { @include box-sizing('border-box'); }
 
+html {
+  background-color: $color-webpage-bg;
+}
+
+
+
+
+

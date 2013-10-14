@@ -1,0 +1,32 @@
+footer.footer {
+  background-color: $color-footer-bg;
+  color: #fff;
+
+
+  .deal-categories {
+    background-color: $color-footer--deal-categories-bg;
+
+    ul {
+      list-style-type: none;
+      padding-top: 5%;
+      padding-bottom: 5%;
+
+      li {
+
+        &:first-child {
+          font-weight: bold;
+        }
+
+        a {
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+    }
+
+
+
+
+
+  }
+}
