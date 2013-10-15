@@ -1,11 +1,4 @@
-
-%deals {
-
-}
-
-
-// Test
-.front-deal {
+@mixin deal {
   width: auto;
 
   .image-container {
@@ -29,32 +22,35 @@
         margin: 5%;
       }
     }
-  }
 
-  .description {
-    position: absolute;
-    width:100%;
-    background-color: rgba($color-content-bg,0.75);
-    bottom: 0;
+    .description {
+      position: absolute;
+      width:100%;
+      background-color: rgba($color-content-bg,0.75);
+      bottom: 0;
 
-    p {
-      margin: 2% auto 2% 2%;
+      p {
+        margin: 2% auto 2% 2%;
 
-      &.title {
-        font-weight: bold;
+        &.title {
+          font-weight: bold;
+        }
       }
     }
   }
 
+
+
   .info {
     margin-top: 0;
     width: 100%;
-    //height: auto;
+    height: auto;
     background-color: $color-discount-price-bg;
 
     div {
       display: inline-block;
       width: (100% / 3);
+      height: 40px;
       float: left;
       text-align: center;
 
@@ -80,4 +76,307 @@
 
   }
 
+}
+
+@mixin deal-detail {
+  width: auto;
+
+  .image-container {
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+
+    .hot-deal { display: none;}
+
+    .price {
+      position: absolute;
+      bottom: 40%;
+      right:0%;
+      background-color: rgba($color-content-bg,0.75);
+      white-space: nowrap;  // todo: find a better way to calc div width
+      width: auto;
+      overflow: hidden;
+
+      p {
+        font-size: 1.5em;
+        margin: 5%;
+      }
+    }
+  }
+
+  .description {
+    //position: absolute;
+    width:100%;
+    background-color: $color-content-bg;
+    margin-top: 0;
+
+    .company {
+      display: none;
+    }
+
+    p {
+      margin: 0 auto 2% 2%;
+
+      &.title {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .discount {
+    width: 100%;
+    height: 60px;
+
+    .percentage {
+      background-color: $color-discount-percentage-bg;
+      width: 50%;
+      height: 100%;
+      float:left;
+    }
+
+    .days-left {
+      display: inline-block;
+      background-color: $color-days-left-bg;
+      width: 50%;
+      height: 100%;
+    }
+
+    p {
+      text-align: center;
+      color: #fff;
+      padding: 5%;
+      margin: 0;
+    }
+  }
+
+  .social {
+    width: 100%;
+    height: 50px;
+
+    div {
+      width: (100% / 3);
+      img {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+
+    .facebook {
+      float: left;
+      background-color: $color-facebook-bg;
+    }
+
+    .share {
+      float: left;
+      background-color: $color-content-bg;
+    }
+
+    .twitter {
+      float: left;
+      background-color: $color-twitter-bg;
+    }
+
+
+
+
+  }
+
+  .info {
+    margin-top: 0;
+    width: 100%;
+    height: auto;
+    background-color: $color-discount-price-bg;
+
+    div {
+      display: inline-block;
+      width: (100% / 3);
+      height: 40px;
+      float: left;
+      text-align: center;
+
+      &.price {
+        //font-size: 2em;
+      }
+
+      &.old-price {
+        text-decoration: line-through;
+      }
+
+      &.buy {
+        float: none;
+        text-align: center;
+        background-color: $color-btn-bg;
+
+        .btn-buy {
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+    }
+
+  }
+
+}
+
+@mixin popular-deal {
+  width: 100%;
+  height: auto;
+
+  .image-container {
+    position: relative;
+    width: 40%;
+    height: 90px;
+    float: left;
+
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .details {
+    width: 60%;
+    float: left;
+    height: 90px;
+
+    .description {
+      background-color: $color-content-bg;
+      height: 45px;
+      .company { display: none;}
+    }
+
+    .info {
+      margin-top: 0;
+      width: 100%;
+      height: 45px;
+      background-color: $color-discount-price-bg;
+
+      div {
+        display: inline-block;
+        width: (100% / 2);
+        height: 45px;
+        float: left;
+
+        p.title {
+          text-align: center;
+        }
+
+        &.price {
+          //font-size: 2em;
+        }
+
+        &.old-price {
+          text-decoration: line-through;
+        }
+
+        &.buy {
+          display: none;
+        }
+      }
+
+    }
+
+
+
+
+  }
+
+
+
+
+
+}
+
+
+
+
+
+// Test front deal
+.front-deal {
+ @include deal;
+
+}
+
+// Deals entries
+.deal-entry {
+  @include deal;
+  margin-bottom: 20px;
+}
+
+// Deals details
+
+.deal-detail {
+  @include deal-detail;
+}
+
+// Latests Deals
+.latest-deals {
+  display: none;
+}
+
+
+// Featured Deals
+.featured-deals {
+  display: none;
+}
+
+// Deal Company Info
+.deal-company-info {
+  width: 100%;
+
+  div {
+    background-color: $color-content-bg;
+
+    p, h3 {
+      margin: 0;
+      padding: 2% 5%;
+
+      &.title {
+        font-weight: bold;
+      }
+
+    }
+  }
+
+  button.collapse {
+    background-color: $color-content-bg;
+    border: none;
+    display: block;
+    margin: 0 auto;
+  }
+
+  img.logo {
+    display: block;
+    margin: 0 auto;
+  }
+
+}
+
+// Popular Deals on Deals/show.html
+.popular-deals {
+
+  header {
+    background-color: $color-headers-bg;
+    height: 40px;
+    width: 100%;
+
+    h3 {
+      color: #fff;
+      text-align: left;
+      margin: 0;
+      padding: 2% 5%;
+    }
+  }
+
+  .deal-entry {
+    @include popular-deal;
+  }
+
+
+}
+
+.similar-deals {
+  display: none;
 }
