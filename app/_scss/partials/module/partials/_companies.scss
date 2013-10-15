@@ -60,9 +60,89 @@
 
 }
 
+@mixin company-show {
+  width: 100%;
+  background-color: $color-content-bg;
+  margin: 0px auto;
+
+  p {
+    margin: 0;
+    padding: 0 5%;
+  }
+
+  .details {
+    width: 100%;
+    position: relative;
+
+    .name {
+      background-color: $color-headers-bg;
+      p {
+        color: #fff;
+        text-align: center;
+      }
+    }
+
+    .logo {
+      position: absolute;
+      top: 40px;
+      width: 100%;
+
+      img {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+
+    .title { display: none; }
+
+    .description {
+      padding-top: 100px;
+      color: $color-company-show-text;
+    }
+
+  }
+
+  .address, .contact {
+
+    width: 100%;
+
+    .title {
+      p {
+        padding-top: 3%;
+        padding-bottom: 3%;
+      }
+    }
+
+    .info {
+      p {
+        color: $color-company-show-text;
+      }
+    }
+  }
+
+  p.website {
+    font-weight: bold;
+    padding: 2% 5%;
+  }
+
+  .map {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+
+}
+
+
 // Companies Listing
 .companies-listing {
   .entry {
     @include company-list-entry;
   }
+}
+
+// Company show
+.company-show {
+  @include company-show;
 }
