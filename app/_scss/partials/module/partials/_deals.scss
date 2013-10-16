@@ -1,5 +1,5 @@
-@mixin deal {
-  width: auto;
+@mixin deal($width: auto) {
+  width: $width;
 
   .image-container {
     position: relative;
@@ -23,19 +23,22 @@
       }
     }
 
-    .description {
-      position: absolute;
-      width:100%;
-      background-color: rgba($color-content-bg,0.75);
-      bottom: 0;
+  }
 
-      p {
-        margin: 2% auto 2% 2%;
+  .description {
+    position: absolute;
+    width:100%;
+    background-color: rgba($color-content-bg,0.75);
+    bottom: 0;
 
-        &.title {
-          font-weight: bold;
-        }
+    p {
+      margin: 2% auto 2% 2%;
+
+      &.title {
+        font-weight: bold;
       }
+
+      &.text { display: none; }
     }
   }
 
@@ -286,9 +289,86 @@
 
   }
 
+}
+
+@mixin deal-desktop($width: auto) {
+  width: $width;
+
+  .image-container {
+    position: relative;
+    width: 60%;
+
+    img {
+      width: 100%;
+    }
+
+    .price {
+      position: absolute;
+      bottom: 40%;
+      right:0%;
+      background-color: rgba($color-content-bg,0.75);
+      white-space: nowrap;  // todo: find a better way to calc div width
+      width: auto;
+      overflow: hidden;
+
+      p {
+        font-size: 1.5em;
+        margin: 5%;
+      }
+    }
+
+    .description {
+      position: absolute;
+      width:100%;
+      background-color: rgba($color-content-bg,0.75);
+      bottom: 0;
+
+      p {
+        margin: 2% auto 2% 2%;
+
+        &.title {
+          font-weight: bold;
+        }
+      }
+    }
+  }
 
 
 
+  .info {
+    margin-top: 0;
+    width: 100%;
+    height: auto;
+    background-color: $color-discount-price-bg;
+
+    div {
+      display: inline-block;
+      width: (100% / 3);
+      height: 40px;
+      float: left;
+      text-align: center;
+
+      &.price {
+        //font-size: 2em;
+      }
+
+      &.old-price {
+        text-decoration: line-through;
+      }
+
+      &.buy {
+        float: none;
+        text-align: center;
+        background-color: $color-btn-bg;
+
+        .btn-buy {
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+    }
+
+  }
 
 }
 
@@ -296,10 +376,15 @@
 
 
 
-// Test front deal
+//  Front deal (Frontpage)
 .front-deal {
  @include deal;
+}
 
+@include breakpoint($breakpoint-tablet-landscape) {
+  .front-deal {
+    @include deal-desktop;
+  }
 }
 
 // Deals entries

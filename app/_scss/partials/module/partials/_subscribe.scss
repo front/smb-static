@@ -2,19 +2,82 @@
   background-color: $color-headers-bg;
   color: #fff;
   form {
+    width: 100%;
 
-    label {}
-    input[type="submit"] {
-      background-color: $color-btn-bg;
-      border: 0;
-      color: #fff;
+    .label {
+      width: 100%;
+      padding: 10px 10px;
+    }
 
+    .input {
+      width: 100%;
+      padding-bottom: 42px;
+
+      .email {
+        background-color: #fff;
+        float: left;
+        width: 80%;
+        height: 100%;
+        padding: 10px 10px;
+
+        input[type="email"] {
+          width: 100%;
+          border: 0;
+        }
+      }
+
+      .submit {
+        display: inline-block;
+        width: 20%;
+        height: 100%;
+        padding: 10px 0;
+        background-color: $color-subscribe-btn-mobile;
+        text-align: center;
+        input[type="submit"] {
+          background-color: $color-subscribe-btn-mobile;
+          border: 0;
+          color: #fff;
+        }
+      }
     }
   }
-  @include breakpoint($breakpoint-tablet-portrait) {
+}
 
+// 960px
+@include breakpoint($breakpoint-tablet-landscape) {
+  .subscribe {
+    width: 100%;
+    background-color: $color-webpage-bg;
+
+    form {
+      width: 100%;
+
+      .label {
+        float: left;
+        width: 40%;
+        background-color: $color-subscribe-label-bg;
+        padding: 10px 10px;
+      }
+
+      .input {
+        float: left;
+        width: 60%;
+
+        .submit {
+          background-color: $color-subscribe-btn-desktop;
+          input[type="submit"] {
+            background-color: $color-subscribe-btn-desktop;
+          }
+
+        }
+
+      }
+
+    }
 
   }
+
+
 
 
 }
