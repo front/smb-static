@@ -233,6 +233,7 @@
 
     img {
       width: 100%;
+      height: 100%;
     }
   }
 
@@ -243,25 +244,27 @@
 
     .description {
       background-color: $color-content-bg;
-      height: 45px;
+      padding: 10px 0 10px 0;
+      height: 50%;
       .company { display: none;}
+      p {
+        margin: 0;
+        text-align: center;
+      }
     }
 
     .info {
       margin-top: 0;
       width: 100%;
-      height: 45px;
+      padding: 10px 0 10px 0;
+      height: 50%;
       background-color: $color-discount-price-bg;
 
       div {
         display: inline-block;
         width: (100% / 2);
-        height: 45px;
+        height: 100%;
         float: left;
-
-        p.title {
-          text-align: center;
-        }
 
         &.price {
           //font-size: 2em;
