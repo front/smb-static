@@ -190,11 +190,11 @@
 
 }
 
-@mixin regular-deal($width: auto) {
+@mixin regular-deal($width: auto,$bg-color: $color-webpage-bg) {
   width: $width;
   position: relative;
   height: auto;
-  background-color: $color-content-bg;
+  background-color: $bg-color;
 
   .image-container {
     position: relative;
@@ -562,6 +562,47 @@
     }
   }
 }
+
+// **********
+// Deals Index
+// **********
+
+// Deals Menu
+.deals-menu {
+  display: none;
+}
+
+@include breakpoint($breakpoint-tablet-landscape) {
+  // todo: style deals-menu
+}
+
+// Deals listing
+.deals-listing {
+  .deal-entry {
+    @include regular-deal;
+    margin-bottom: 20px;
+  }
+}
+
+@include breakpoint($breakpoint-tablet-landscape) {
+  .deals-listing {
+    @include clearfix;
+    .deal-entry {
+      float: left;
+      padding: 1em 1em;
+      @include regular-deal(100%/3);
+    }
+  }
+}
+
+@include breakpoint($breakpoint-desktop) {
+  .deals-listing {
+    .deal-entry {
+      @include regular-deal(25%);
+    }
+  }
+}
+
 
 
 
