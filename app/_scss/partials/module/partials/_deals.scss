@@ -533,7 +533,7 @@
     .deal-entry {
       float: left;
       padding: 10px 10px;
-      @include regular-deal(25%);
+      @include regular-deal(100%/3);
     }
 
     h2.title {
@@ -553,9 +553,14 @@
       }
     }
   }
+}
 
-
-
+@include breakpoint($breakpoint-desktop) {
+  .frontpage-latest-deals, .frontpage-featured-deals {
+    .deal-entry {
+      @include regular-deal(25%);
+    }
+  }
 }
 
 
