@@ -1,5 +1,8 @@
-@mixin deal($width: auto) {
+@mixin main-deal($width: auto) {
   width: $width;
+  position: relative;
+  height: auto;
+  background-color: $color-content-bg;
 
   .image-container {
     position: relative;
@@ -19,7 +22,8 @@
 
       p {
         font-size: 1.5em;
-        margin: 5%;
+        margin: 0;
+        padding: 5% 15% 5% 5%;
       }
     }
 
@@ -32,7 +36,8 @@
     bottom: 0;
 
     p {
-      margin: 2% auto 2% 2%;
+      margin: 0;
+      padding: 2% 0 2% 2%;
 
       &.title {
         font-weight: bold;
@@ -45,7 +50,9 @@
 
 
   .info {
+    position: absolute;
     margin-top: 0;
+    bottom: -40px;
     width: 100%;
     height: auto;
     background-color: $color-discount-price-bg;
@@ -56,6 +63,7 @@
       height: 40px;
       float: left;
       text-align: center;
+      padding: 2% 0 2% 2%;
 
       &.price {
         //font-size: 2em;
@@ -75,11 +83,203 @@
           text-decoration: none;
         }
       }
+
     }
 
   }
 
 }
+
+@mixin main-deal-desktop($width: auto) {
+  @include clearfix;
+  width: $width;
+  position: relative;
+  height: auto;
+  background-color: $color-content-bg;
+
+  .image-container {
+    position: relative;
+    float: left;
+    width: 60%;
+
+    img {
+      width: 100%;
+    }
+
+    .price {
+      position: absolute;
+      bottom: 40%;
+      right:0%;
+      background-color: rgba($color-content-bg,0.75);
+      white-space: nowrap;  // todo: find a better way to calc div width
+      width: auto;
+      overflow: hidden;
+
+      p {
+        font-size: 1.5em;
+        margin: 0;
+        padding: 5% 15% 5% 5%;
+      }
+    }
+
+  }
+
+  .description {
+    position: absolute;
+    left: 60%;
+    width:40%;
+    height: auto;
+    top: 0;
+    bottom: 40px;
+    padding: 10% 1%;
+    background-color: $color-content-bg;
+
+
+    p {
+      margin: 0;
+      padding: 2% 0 2% 2%;
+
+      &.title {
+        font-weight: bold;
+      }
+
+      &.text { display: block; }
+    }
+  }
+
+
+
+  .info {
+    position: absolute;
+    left: 60%;
+    width: 40%;
+    height: auto;
+    bottom: 0;
+    background-color: $color-discount-price-bg;
+
+    div {
+      display: inline-block;
+      width: (100% / 3);
+      height: 40px;
+      float: left;
+      text-align: center;
+      padding: 2% 0 2% 2%;
+
+      &.price {
+        //font-size: 2em;
+      }
+
+      &.old-price {
+        text-decoration: line-through;
+      }
+
+      &.buy {
+        float: none;
+        text-align: center;
+        background-color: $color-btn-bg;
+
+        .btn-buy {
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+
+    }
+
+  }
+
+}
+
+@mixin regular-deal($width: auto) {
+  width: $width;
+  position: relative;
+  height: auto;
+  background-color: $color-content-bg;
+
+  .image-container {
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+
+    .price {
+      position: absolute;
+      bottom: 40%;
+      right:0%;
+      background-color: rgba($color-content-bg,0.75);
+      white-space: nowrap;  // todo: find a better way to calc div width
+      width: auto;
+      overflow: hidden;
+
+      p {
+        font-size: 1.5em;
+        margin: 0;
+        padding: 5% 15% 5% 5%;
+      }
+    }
+
+    .description {
+      position: absolute;
+      width:100%;
+      background-color: rgba($color-content-bg,0.75);
+      bottom: 0;
+
+      p {
+        margin: 0;
+        padding: 2% 0 2% 2%;
+
+        &.title {
+          font-weight: bold;
+        }
+
+        &.text { display: none; }
+      }
+    }
+
+  }
+
+
+  .info {
+    margin-top: 0;
+    width: 100%;
+    height: auto;
+    background-color: $color-discount-price-bg;
+
+    div {
+      display: inline-block;
+      width: (100% / 3);
+      height: 40px;
+      float: left;
+      text-align: center;
+      padding: 2% 0 2% 2%;
+
+      &.price {
+        //font-size: 2em;
+      }
+
+      &.old-price {
+        text-decoration: line-through;
+      }
+
+      &.buy {
+        float: none;
+        text-align: center;
+        background-color: $color-btn-bg;
+
+        .btn-buy {
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+
+    }
+
+  }
+
+}
+
+
 
 @mixin deal-detail {
   width: auto;
@@ -291,105 +491,79 @@
 
 }
 
-@mixin deal-desktop($width: auto) {
-  width: $width;
-
-  .image-container {
-    position: relative;
-    width: 60%;
-
-    img {
-      width: 100%;
-    }
-
-    .price {
-      position: absolute;
-      bottom: 40%;
-      right:0%;
-      background-color: rgba($color-content-bg,0.75);
-      white-space: nowrap;  // todo: find a better way to calc div width
-      width: auto;
-      overflow: hidden;
-
-      p {
-        font-size: 1.5em;
-        margin: 5%;
-      }
-    }
-
-    .description {
-      position: absolute;
-      width:100%;
-      background-color: rgba($color-content-bg,0.75);
-      bottom: 0;
-
-      p {
-        margin: 2% auto 2% 2%;
-
-        &.title {
-          font-weight: bold;
-        }
-      }
-    }
-  }
-
-
-
-  .info {
-    margin-top: 0;
-    width: 100%;
-    height: auto;
-    background-color: $color-discount-price-bg;
-
-    div {
-      display: inline-block;
-      width: (100% / 3);
-      height: 40px;
-      float: left;
-      text-align: center;
-
-      &.price {
-        //font-size: 2em;
-      }
-
-      &.old-price {
-        text-decoration: line-through;
-      }
-
-      &.buy {
-        float: none;
-        text-align: center;
-        background-color: $color-btn-bg;
-
-        .btn-buy {
-          color: #fff;
-          text-decoration: none;
-        }
-      }
-    }
-
-  }
-
-}
 
 
 
 
 
-//  Front deal (Frontpage)
+
+
+
+//  Frontpage
+
+// Main Deal
 .front-deal {
- @include deal;
+ @include main-deal;
 }
 
 @include breakpoint($breakpoint-tablet-landscape) {
   .front-deal {
-    @include deal-desktop;
+    @include main-deal-desktop;
   }
 }
 
+// Latest and Popular Deals
+.frontpage-latest-deals, .frontpage-featured-deals {
+  position: relative;
+  .deal-entry, h2, a {
+    display: none;
+  }
+}
+
+@include breakpoint($breakpoint-tablet-landscape) {
+
+  .frontpage-latest-deals, .frontpage-featured-deals {
+    .deal-entry, h2, a {
+      display: block;
+    }
+  }
+
+  .frontpage-latest-deals, .frontpage-featured-deals {
+    @include clearfix;
+    .deal-entry {
+      float: left;
+      padding: 10px 10px;
+      @include regular-deal(25%);
+    }
+
+    h2.title {
+      padding-left: 10px;
+    }
+
+    div.btn-view-all-deals {
+      clear: both;
+      float: right;
+      background-color: $color-btn-view-all-bg;
+      padding: 1em 1em;
+      text-align: center;
+      width: 15%;
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+  }
+
+
+
+}
+
+
+
+/*
 // Deals entries
 .deal-entry {
-  @include deal;
+  @include main-deal;
   margin-bottom: 20px;
 }
 
@@ -399,16 +573,7 @@
   @include deal-detail;
 }
 
-// Latests Deals
-.latest-deals {
-  display: none;
-}
 
-
-// Featured Deals
-.featured-deals {
-  display: none;
-}
 
 // Deal Company Info
 .deal-company-info {
@@ -472,3 +637,7 @@
 .company-deals {
   display: none;
 }
+
+
+
+*/
