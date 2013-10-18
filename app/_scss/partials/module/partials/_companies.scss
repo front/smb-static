@@ -153,10 +153,8 @@
 
 }
 
-
-
-@mixin company-show {
-  width: 100%;
+@mixin company-show($width: auto) {
+  width: $width;
   background-color: $color-content-bg;
   margin: 0px auto;
 
@@ -229,8 +227,91 @@
 
 }
 
+@mixin company-show-desktop($width: auto) {
+  width: $width;
+  background-color: $color-content-bg;
 
+
+  p {
+    margin: 0;
+    padding: 0 5%;
+  }
+
+  .details {
+    width: 100%;
+    position: absolute;
+    background-color: $color-headers-bg;
+    top: 0;
+
+    .name {
+      p {
+        color: #fff;
+        text-align: left;
+        padding: 10px 10px;
+      }
+    }
+
+    .logo {
+      position: absolute;
+      top: 140px;
+      left: 60%;
+      width: 20%;
+
+      img {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+
+    .title {
+      display: block;
+    }
+
+    .description {
+      padding-top: 100px;
+      color: $color-company-show-text;
+      background-color: $color-content-bg;
+    }
+
+  }
+
+  .address, .contact {
+
+    width: 100%;
+
+    .title {
+      p {
+        padding-top: 3%;
+        padding-bottom: 3%;
+      }
+    }
+
+    .info {
+      p {
+        color: $color-company-show-text;
+      }
+    }
+  }
+
+  p.website {
+    font-weight: bold;
+    padding: 2% 5%;
+  }
+
+  .map {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+
+}
+
+
+// *********
 // Companies Listing
+// *********
+
 .companies-listing {
   .entry {
     @include company-list-entry;
@@ -245,7 +326,45 @@
   }
 }
 
+// ***********
 // Company show
+// ***********
+
 .company-show {
   @include company-show;
+}
+
+.company-show-deals {
+  h2.title {
+    padding-left: 1em;
+  }
+
+  .deal-entry {
+    @include regular-deal;
+    margin-bottom: 1em;
+  }
+}
+
+@include breakpoint($breakpoint-tablet-landscape) {
+  .company-show {
+    float: left;
+    height: auto;
+    position: relative;
+    //@include company-show-desktop(70%);
+    @include company-show(70%);
+  }
+
+  .company-show-deals {
+
+    display: inline-block;
+    width: 30%;
+    height: auto;
+    background-color: $color-webpage-bg;
+    padding-left: 10px;
+    padding-right: 10px;
+    .deal-entry {
+      @include regular-deal;
+    }
+  }
+
 }
