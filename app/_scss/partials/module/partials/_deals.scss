@@ -281,8 +281,8 @@
 
 
 
-@mixin deal-detail {
-  width: auto;
+@mixin deal-detail($width: auto) {
+  width: $width;
 
   .image-container {
     position: relative;
@@ -372,6 +372,7 @@
     }
 
     .share {
+      height: 36px;
       float: left;
       background-color: $color-content-bg;
     }
@@ -606,21 +607,30 @@
 
 
 
+// *******
+// Deals Show
+// *******
+.deal-show {
+  .deal-detail {
+    @include deal-detail(100%);
+  }
+
+  .deal-company-info {display: none;}
+
+  .similar-deals { display: none;}
+
+  .popular-deals {
+    h3.title {padding-left: 10px;}
+    .deal-entry {
+      @include popular-deal;
+    }
+
+  }
+
+
+}
+
 /*
-// Deals entries
-.deal-entry {
-  @include main-deal;
-  margin-bottom: 20px;
-}
-
-// Deals details
-
-.deal-detail {
-  @include deal-detail;
-}
-
-
-
 // Deal Company Info
 .deal-company-info {
   width: 100%;
@@ -684,6 +694,6 @@
   display: none;
 }
 
-
-
 */
+
+
