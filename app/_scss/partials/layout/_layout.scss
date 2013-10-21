@@ -1,5 +1,6 @@
 .l-container {
-  //@include background-grid;
+  @include clearfix;
+  @include background-grid;
   background-color: $color-webpage-bg;
 }
 

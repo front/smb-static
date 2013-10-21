@@ -107,6 +107,7 @@
   .website {
     position: absolute;
     left: 60%;
+    width: 25%;
     padding: 2% 5%;
     a {
       font-weight: bold;
@@ -118,6 +119,7 @@
 
 
   .more-info {
+    @include clearfix;
     position: relative;
     left: 85%;
     width: 15%;
@@ -125,6 +127,7 @@
     background-color: $color-more-btn;
 
     .logo {
+
       background-color: $color-logo-bg;
       float: none;
       width: 100%;
@@ -234,16 +237,16 @@
 
   p {
     margin: 0;
-    padding: 0 5%;
+    padding: 0 10px;
   }
 
   .details {
     width: 100%;
-    position: absolute;
-    background-color: $color-headers-bg;
+    //position: absolute;
     top: 0;
 
     .name {
+      background-color: $color-headers-bg;
       p {
         color: #fff;
         text-align: left;
@@ -253,8 +256,8 @@
 
     .logo {
       position: absolute;
-      top: 140px;
-      left: 60%;
+      top: 120px;
+      right: 10px;
       width: 20%;
 
       img {
@@ -265,10 +268,14 @@
 
     .title {
       display: block;
+      font-weight: bold;
+      font-size : 1.5em;
+      padding: 10px 10px;
     }
 
     .description {
-      padding-top: 100px;
+      width: 75%;
+      padding-top: 20px;
       color: $color-company-show-text;
       background-color: $color-content-bg;
     }
@@ -276,13 +283,13 @@
   }
 
   .address, .contact {
-
-    width: 100%;
+    width: 50%;
+    float: left;
 
     .title {
       p {
-        padding-top: 3%;
-        padding-bottom: 3%;
+        //padding-top: 3%;
+        //padding-bottom: 3%;
       }
     }
 
@@ -294,8 +301,14 @@
   }
 
   p.website {
+    position: absolute;
+    top: 0;
+    right: 10px;
     font-weight: bold;
-    padding: 2% 5%;
+    padding: 10px 10px;
+    color: #fff;
+
+
   }
 
   .map {
@@ -340,30 +353,31 @@
   }
 
   .deal-entry {
-    @include regular-deal;
+    @include popular-deal;
     margin-bottom: 1em;
   }
 }
 
 @include breakpoint($breakpoint-tablet-landscape) {
   .company-show {
+   @include clearfix;
     float: left;
     height: auto;
     position: relative;
-    //@include company-show-desktop(70%);
-    @include company-show(70%);
+    @include company-show-desktop(65%);
   }
 
   .company-show-deals {
-
+    @include clearfix;
     display: inline-block;
-    width: 30%;
+    float: left;
+    width: 35%;
     height: auto;
     background-color: $color-webpage-bg;
     padding-left: 10px;
     padding-right: 10px;
     .deal-entry {
-      @include regular-deal;
+      @include popular-deal;
     }
   }
 

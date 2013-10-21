@@ -23,7 +23,7 @@
       p {
         font-size: 1.5em;
         margin: 0;
-        padding: 5% 15% 5% 5%;
+        padding: 5px 15px 5px 5px;
       }
     }
 
@@ -118,7 +118,7 @@
       p {
         font-size: 1.5em;
         margin: 0;
-        padding: 5% 15% 5% 5%;
+        padding: 5px 15px 5px 5px;
       }
     }
 
@@ -215,7 +215,7 @@
       p {
         font-size: 1.5em;
         margin: 0;
-        padding: 5% 15% 5% 5%;
+        padding: 5px 15px 5px 5px;
       }
     }
 
@@ -278,7 +278,6 @@
   }
 
 }
-
 
 
 @mixin deal-detail($width: auto) {
@@ -349,36 +348,39 @@
     p {
       text-align: center;
       color: #fff;
-      padding: 5%;
+      padding: 10px 0;
       margin: 0;
     }
   }
 
   .social {
+    @include clearfix;
     width: 100%;
-    height: 50px;
+    height: 100%;
+    margin-bottom: 10px;
 
     div {
       width: (100% / 3);
+      height: 100%;
+      float: left;
+      padding: 5px 0;
+
       img {
         display: block;
         margin: 0 auto;
       }
+
     }
 
     .facebook {
-      float: left;
       background-color: $color-facebook-bg;
     }
 
     .share {
-      height: 36px;
-      float: left;
       background-color: $color-content-bg;
     }
 
     .twitter {
-      float: left;
       background-color: $color-twitter-bg;
     }
 
@@ -399,6 +401,191 @@
       height: 40px;
       float: left;
       text-align: center;
+
+      &.price {
+        //font-size: 2em;
+      }
+
+      &.old-price {
+        text-decoration: line-through;
+      }
+
+      &.buy {
+        float: none;
+        text-align: center;
+        background-color: $color-btn-bg;
+
+        .btn-buy {
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+    }
+
+  }
+
+}
+
+@mixin deal-detail-desktop($width: auto) {
+  @include clearfix;
+  width: $width;
+  position: relative;
+  height: auto;
+  background-color: $color-content-bg;
+
+  .image-container {
+    position: relative;
+    float: left;
+    width: 60%;
+
+    img {
+      width: 100%;
+    }
+
+    .hot-deal {
+      display: block;
+      position:absolute;
+      left: 0;
+      top: 0;
+      background-color: #0ee204;
+      width: auto;
+
+      p {
+        color: #fff;
+        font-size: 1.2em;
+        margin: 0;
+        padding: 10px 15px;
+      }
+
+
+
+    }
+
+    .price {
+      position: absolute;
+      bottom: 86px;
+      height: 60px;
+      right:0;
+      background-color: rgba($color-content-bg,0.75);
+      white-space: nowrap;  // todo: find a better way to calc div width
+      width: auto;
+      overflow: hidden;
+
+      p {
+        font-size: 1.5em;
+        margin: 0;
+        padding: 15px 25px 15px 15px;
+      }
+    }
+  }
+
+  .description {
+    position: absolute;
+    left: 60%;
+    width:40%;
+    height: 40px;
+    top: 0;
+    bottom: 146px;
+    padding: 10px;
+    background-color: $color-content-bg;
+    margin-top: 0;
+
+    .company {
+      display: block;
+    }
+
+    p {
+      margin: 0;
+      padding: 2% 0 2% 2%;
+
+      &.title {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .discount {
+    position: absolute;
+    left: 60%;
+    bottom: 86px;
+    width: 40%;
+    height: 60px;
+
+    .percentage {
+      background-color: $color-discount-percentage-bg;
+      width: 50%;
+      height: 100%;
+      float:left;
+    }
+
+    .days-left {
+      display: inline-block;
+      background-color: $color-days-left-bg;
+      width: 50%;
+      height: 100%;
+    }
+
+    p {
+      text-align: center;
+      color: #fff;
+      padding: 10px 0;
+      margin: 0;
+    }
+  }
+
+  .social {
+    position : absolute;
+    left: 60%;
+    bottom: 40px;
+    width: 40%;
+    height: 46px;
+    margin-bottom: 0px;
+
+    div {
+      width: (100% / 3);
+      height: 100%;
+      float: left;
+      padding: 5px 0;
+
+      img {
+        display: block;
+        margin: 0 auto;
+      }
+
+    }
+
+    .facebook {
+      background-color: $color-facebook-bg;
+    }
+
+    .share {
+      background-color: $color-content-bg;
+    }
+
+    .twitter {
+      background-color: $color-twitter-bg;
+    }
+
+
+
+
+  }
+
+  .info {
+    position: absolute;
+    left: 60%;
+    width: 40%;
+    height: auto;
+    bottom: 0;
+    background-color: $color-discount-price-bg;
+
+    div {
+      display: inline-block;
+      width: (100% / 3);
+      height: 40px;
+      float: left;
+      text-align: center;
+      padding: 2% 0 2% 2%;
 
       &.price {
         //font-size: 2em;
@@ -460,15 +647,16 @@
     .info {
       margin-top: 0;
       width: 100%;
-      padding: 10px 0 10px 0;
-      height: 50%;
+      height: auto;
       background-color: $color-discount-price-bg;
 
       div {
         display: inline-block;
-        width: (100% / 2);
-        height: 100%;
+        width: (100% / 3);
+        height: 40px;
         float: left;
+        text-align: center;
+        padding: 2% 0 2% 2%;
 
         &.price {
           //font-size: 2em;
@@ -479,14 +667,19 @@
         }
 
         &.buy {
-          display: none;
+          float: none;
+          text-align: center;
+          background-color: $color-btn-bg;
+
+          .btn-buy {
+            color: #fff;
+            text-decoration: none;
+          }
         }
+
       }
 
     }
-
-
-
 
   }
 
@@ -626,8 +819,14 @@
     }
 
   }
+}
 
-
+@include breakpoint($breakpoint-tablet-landscape) {
+  .deal-show {
+    .deal-detail {
+      @include deal-detail-desktop(100%);
+    }
+  }
 }
 
 /*
