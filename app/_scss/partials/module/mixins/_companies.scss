@@ -20,16 +20,21 @@
   }
 
   .website {
-    padding: 2% 5%;
+    padding: 10px;
     a {
       font-weight: bold;
-      color: $color-company-name-text;
+      color: $color-text-title;
       text-decoration: none;
     }
   }
 
   .address {
     .title { display: none; }
+    .info {
+      p {
+        color: $color-text-content-grey;
+      }
+    }
   }
 
   .more-info {
@@ -75,7 +80,8 @@
 
   p {
     margin: 0;
-    padding: 0 5%;
+    color: $color-company-name-text;
+    padding: 10px 10px;
   }
 
   .details {
@@ -83,12 +89,12 @@
     float: left;
 
     p.name {
-      padding-top: 2%;
-      color: $color-company-name-text;
+      font-weight: bold;
     }
 
     .description {
       display: block;
+
     }
   }
 
@@ -101,6 +107,12 @@
       font-weight: bold;
     }
 
+    .info {
+      p {
+        padding: 0;
+      }
+    }
+
 
   }
 
@@ -108,7 +120,6 @@
     position: absolute;
     left: 60%;
     width: 25%;
-    padding: 2% 5%;
     a {
       font-weight: bold;
       color: $color-company-name-text;
@@ -120,7 +131,7 @@
 
   .more-info {
     @include clearfix;
-    position: relative;
+    float: right;
     left: 85%;
     width: 15%;
     height: 100%;

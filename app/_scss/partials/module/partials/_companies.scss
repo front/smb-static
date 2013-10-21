@@ -12,6 +12,7 @@
 @include breakpoint($breakpoint-tablet-landscape) {
   .companies-listing {
     .entry {
+      @include clearfix;
       @include company-list-entry-desktop;
     }
   }
