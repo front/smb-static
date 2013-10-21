@@ -1,697 +1,3 @@
-@mixin main-deal($width: auto) {
-  width: $width;
-  position: relative;
-  height: auto;
-  background-color: $color-content-bg;
-
-  .image-container {
-    position: relative;
-
-    img {
-      width: 100%;
-    }
-
-    .price {
-      position: absolute;
-      bottom: 40%;
-      right:0%;
-      background-color: rgba($color-content-bg,0.75);
-      white-space: nowrap;  // todo: find a better way to calc div width
-      width: auto;
-      overflow: hidden;
-
-      p {
-        font-size: 1.5em;
-        margin: 0;
-        padding: 5px 15px 5px 5px;
-      }
-    }
-
-  }
-
-  .description {
-    position: absolute;
-    width:100%;
-    background-color: rgba($color-content-bg,0.75);
-    bottom: 0;
-
-    p {
-      margin: 0;
-      padding: 2% 0 2% 2%;
-
-      &.title {
-        font-weight: bold;
-      }
-
-      &.text { display: none; }
-    }
-  }
-
-
-
-  .info {
-    position: absolute;
-    margin-top: 0;
-    bottom: -40px;
-    width: 100%;
-    height: auto;
-    background-color: $color-discount-price-bg;
-
-    div {
-      display: inline-block;
-      width: (100% / 3);
-      height: 40px;
-      float: left;
-      text-align: center;
-      padding: 2% 0 2% 2%;
-
-      &.price {
-        //font-size: 2em;
-      }
-
-      &.old-price {
-        text-decoration: line-through;
-      }
-
-      &.buy {
-        float: none;
-        text-align: center;
-        background-color: $color-btn-bg;
-
-        .btn-buy {
-          color: #fff;
-          text-decoration: none;
-        }
-      }
-
-    }
-
-  }
-
-}
-
-@mixin main-deal-desktop($width: auto) {
-  @include clearfix;
-  width: $width;
-  position: relative;
-  height: auto;
-  background-color: $color-content-bg;
-
-  .image-container {
-    position: relative;
-    float: left;
-    width: 60%;
-
-    img {
-      width: 100%;
-    }
-
-    .price {
-      position: absolute;
-      bottom: 40%;
-      right:0%;
-      background-color: rgba($color-content-bg,0.75);
-      white-space: nowrap;  // todo: find a better way to calc div width
-      width: auto;
-      overflow: hidden;
-
-      p {
-        font-size: 1.5em;
-        margin: 0;
-        padding: 5px 15px 5px 5px;
-      }
-    }
-
-  }
-
-  .description {
-    position: absolute;
-    left: 60%;
-    width:40%;
-    height: auto;
-    top: 0;
-    bottom: 40px;
-    padding: 10% 1%;
-    background-color: $color-content-bg;
-
-
-    p {
-      margin: 0;
-      padding: 2% 0 2% 2%;
-
-      &.title {
-        font-weight: bold;
-      }
-
-      &.text { display: block; }
-    }
-  }
-
-
-
-  .info {
-    position: absolute;
-    left: 60%;
-    width: 40%;
-    height: auto;
-    bottom: 0;
-    background-color: $color-discount-price-bg;
-
-    div {
-      display: inline-block;
-      width: (100% / 3);
-      height: 40px;
-      float: left;
-      text-align: center;
-      padding: 2% 0 2% 2%;
-
-      &.price {
-        //font-size: 2em;
-      }
-
-      &.old-price {
-        text-decoration: line-through;
-      }
-
-      &.buy {
-        float: none;
-        text-align: center;
-        background-color: $color-btn-bg;
-
-        .btn-buy {
-          color: #fff;
-          text-decoration: none;
-        }
-      }
-
-    }
-
-  }
-
-}
-
-@mixin regular-deal($width: auto,$bg-color: $color-webpage-bg) {
-  width: $width;
-  position: relative;
-  height: auto;
-  background-color: $bg-color;
-
-  .image-container {
-    position: relative;
-
-    img {
-      width: 100%;
-    }
-
-    .price {
-      position: absolute;
-      bottom: 40%;
-      right:0%;
-      background-color: rgba($color-content-bg,0.75);
-      white-space: nowrap;  // todo: find a better way to calc div width
-      width: auto;
-      overflow: hidden;
-
-      p {
-        font-size: 1.5em;
-        margin: 0;
-        padding: 5px 15px 5px 5px;
-      }
-    }
-
-    .description {
-      position: absolute;
-      width:100%;
-      background-color: rgba($color-content-bg,0.75);
-      bottom: 0;
-
-      p {
-        margin: 0;
-        padding: 2% 0 2% 2%;
-
-        &.title {
-          font-weight: bold;
-        }
-
-        &.text { display: none; }
-      }
-    }
-
-  }
-
-
-  .info {
-    margin-top: 0;
-    width: 100%;
-    height: auto;
-    background-color: $color-discount-price-bg;
-
-    div {
-      display: inline-block;
-      width: (100% / 3);
-      height: 40px;
-      float: left;
-      text-align: center;
-      padding: 2% 0 2% 2%;
-
-      &.price {
-        //font-size: 2em;
-      }
-
-      &.old-price {
-        text-decoration: line-through;
-      }
-
-      &.buy {
-        float: none;
-        text-align: center;
-        background-color: $color-btn-bg;
-
-        .btn-buy {
-          color: #fff;
-          text-decoration: none;
-        }
-      }
-
-    }
-
-  }
-
-}
-
-
-@mixin deal-detail($width: auto) {
-  width: $width;
-
-  .image-container {
-    position: relative;
-
-    img {
-      width: 100%;
-    }
-
-    .hot-deal { display: none;}
-
-    .price {
-      position: absolute;
-      bottom: 40%;
-      right:0%;
-      background-color: rgba($color-content-bg,0.75);
-      white-space: nowrap;  // todo: find a better way to calc div width
-      width: auto;
-      overflow: hidden;
-
-      p {
-        font-size: 1.5em;
-        margin: 5%;
-      }
-    }
-  }
-
-  .description {
-    //position: absolute;
-    width:100%;
-    background-color: $color-content-bg;
-    margin-top: 0;
-
-    .company {
-      display: none;
-    }
-
-    p {
-      margin: 0 auto 2% 2%;
-
-      &.title {
-        font-weight: bold;
-      }
-    }
-  }
-
-  .discount {
-    width: 100%;
-    height: 60px;
-
-    .percentage {
-      background-color: $color-discount-percentage-bg;
-      width: 50%;
-      height: 100%;
-      float:left;
-    }
-
-    .days-left {
-      display: inline-block;
-      background-color: $color-days-left-bg;
-      width: 50%;
-      height: 100%;
-    }
-
-    p {
-      text-align: center;
-      color: #fff;
-      padding: 10px 0;
-      margin: 0;
-    }
-  }
-
-  .social {
-    @include clearfix;
-    width: 100%;
-    height: 100%;
-    margin-bottom: 10px;
-
-    div {
-      width: (100% / 3);
-      height: 100%;
-      float: left;
-      padding: 5px 0;
-
-      img {
-        display: block;
-        margin: 0 auto;
-      }
-
-    }
-
-    .facebook {
-      background-color: $color-facebook-bg;
-    }
-
-    .share {
-      background-color: $color-content-bg;
-    }
-
-    .twitter {
-      background-color: $color-twitter-bg;
-    }
-
-
-
-
-  }
-
-  .info {
-    margin-top: 0;
-    width: 100%;
-    height: auto;
-    background-color: $color-discount-price-bg;
-
-    div {
-      display: inline-block;
-      width: (100% / 3);
-      height: 40px;
-      float: left;
-      text-align: center;
-
-      &.price {
-        //font-size: 2em;
-      }
-
-      &.old-price {
-        text-decoration: line-through;
-      }
-
-      &.buy {
-        float: none;
-        text-align: center;
-        background-color: $color-btn-bg;
-
-        .btn-buy {
-          color: #fff;
-          text-decoration: none;
-        }
-      }
-    }
-
-  }
-
-}
-
-@mixin deal-detail-desktop($width: auto) {
-  @include clearfix;
-  width: $width;
-  position: relative;
-  height: auto;
-  background-color: $color-content-bg;
-
-  .image-container {
-    position: relative;
-    float: left;
-    width: 60%;
-
-    img {
-      width: 100%;
-    }
-
-    .hot-deal {
-      display: block;
-      position:absolute;
-      left: 0;
-      top: 0;
-      background-color: #0ee204;
-      width: auto;
-
-      p {
-        color: #fff;
-        font-size: 1.2em;
-        margin: 0;
-        padding: 10px 15px;
-      }
-
-
-
-    }
-
-    .price {
-      position: absolute;
-      bottom: 86px;
-      height: 60px;
-      right:0;
-      background-color: rgba($color-content-bg,0.75);
-      white-space: nowrap;  // todo: find a better way to calc div width
-      width: auto;
-      overflow: hidden;
-
-      p {
-        font-size: 1.5em;
-        margin: 0;
-        padding: 15px 25px 15px 15px;
-      }
-    }
-  }
-
-  .description {
-    position: absolute;
-    left: 60%;
-    width:40%;
-    height: 40px;
-    top: 0;
-    bottom: 146px;
-    padding: 10px;
-    background-color: $color-content-bg;
-    margin-top: 0;
-
-    .company {
-      display: block;
-    }
-
-    p {
-      margin: 0;
-      padding: 2% 0 2% 2%;
-
-      &.title {
-        font-weight: bold;
-      }
-    }
-  }
-
-  .discount {
-    position: absolute;
-    left: 60%;
-    bottom: 86px;
-    width: 40%;
-    height: 60px;
-
-    .percentage {
-      background-color: $color-discount-percentage-bg;
-      width: 50%;
-      height: 100%;
-      float:left;
-    }
-
-    .days-left {
-      display: inline-block;
-      background-color: $color-days-left-bg;
-      width: 50%;
-      height: 100%;
-    }
-
-    p {
-      text-align: center;
-      color: #fff;
-      padding: 10px 0;
-      margin: 0;
-    }
-  }
-
-  .social {
-    position : absolute;
-    left: 60%;
-    bottom: 40px;
-    width: 40%;
-    height: 46px;
-    margin-bottom: 0px;
-
-    div {
-      width: (100% / 3);
-      height: 100%;
-      float: left;
-      padding: 5px 0;
-
-      img {
-        display: block;
-        margin: 0 auto;
-      }
-
-    }
-
-    .facebook {
-      background-color: $color-facebook-bg;
-    }
-
-    .share {
-      background-color: $color-content-bg;
-    }
-
-    .twitter {
-      background-color: $color-twitter-bg;
-    }
-
-
-
-
-  }
-
-  .info {
-    position: absolute;
-    left: 60%;
-    width: 40%;
-    height: auto;
-    bottom: 0;
-    background-color: $color-discount-price-bg;
-
-    div {
-      display: inline-block;
-      width: (100% / 3);
-      height: 40px;
-      float: left;
-      text-align: center;
-      padding: 2% 0 2% 2%;
-
-      &.price {
-        //font-size: 2em;
-      }
-
-      &.old-price {
-        text-decoration: line-through;
-      }
-
-      &.buy {
-        float: none;
-        text-align: center;
-        background-color: $color-btn-bg;
-
-        .btn-buy {
-          color: #fff;
-          text-decoration: none;
-        }
-      }
-    }
-
-  }
-
-}
-
-@mixin popular-deal {
-  width: 100%;
-  height: auto;
-
-  .image-container {
-    position: relative;
-    width: 40%;
-    height: 90px;
-    float: left;
-
-
-    img {
-      width: 100%;
-      height: 100%;
-    }
-  }
-
-  .details {
-    width: 60%;
-    float: left;
-    height: 90px;
-
-    .description {
-      background-color: $color-content-bg;
-      padding: 10px 0 10px 0;
-      height: 50%;
-      .company { display: none;}
-      p {
-        margin: 0;
-        text-align: center;
-      }
-    }
-
-    .info {
-      margin-top: 0;
-      width: 100%;
-      height: auto;
-      background-color: $color-discount-price-bg;
-
-      div {
-        display: inline-block;
-        width: (100% / 3);
-        height: 40px;
-        float: left;
-        text-align: center;
-        padding: 2% 0 2% 2%;
-
-        &.price {
-          //font-size: 2em;
-        }
-
-        &.old-price {
-          text-decoration: line-through;
-        }
-
-        &.buy {
-          float: none;
-          text-align: center;
-          background-color: $color-btn-bg;
-
-          .btn-buy {
-            color: #fff;
-            text-decoration: none;
-          }
-        }
-
-      }
-
-    }
-
-  }
-
-}
-
-
-
-
-
-
-
-
 
 //  Frontpage
 
@@ -783,7 +89,7 @@
     @include clearfix;
     .deal-entry {
       float: left;
-      padding: 1em 1em;
+      padding: 10px 10px;
       @include regular-deal(100%/3);
     }
   }
@@ -806,9 +112,22 @@
 .deal-show {
   .deal-detail {
     @include deal-detail(100%);
+    margin-bottom: 20px;
   }
 
-  .deal-company-info {display: none;}
+  .deal-company-info {
+    .deal-info {
+      @include deal-info;
+      margin-bottom: 20px;
+    }
+
+    .company-info{
+      @include company-show;
+    }
+
+  }
+
+
 
   .similar-deals { display: none;}
 
@@ -826,7 +145,55 @@
     .deal-detail {
       @include deal-detail-desktop(100%);
     }
+
+    .deal-company-info {
+      float: left;
+      width: 60%;
+      .deal-info {
+        @include deal-info;
+      }
+
+      .company-info {
+        @include company-show-desktop;
+      }
+    }
+
+    .popular-deals {
+      float: left;
+      width: 40%;
+
+      .deal-entry {
+        @include popular-deal;
+      }
+    }
+
+    .similar-deals {
+      @include clearfix;
+      display: block;
+      clear: both;
+      width: 100%;
+      .deal-entry {
+        float: left;
+        padding: 10px 10px;
+        @include regular-deal(100%/3);
+      }
+    }
+
   }
+}
+
+@include breakpoint($breakpoint-desktop) {
+  .deal-show {
+
+    .similar-deals {
+      .deal-entry {
+        @include regular-deal(25%);
+      }
+    }
+
+
+  }
+
 }
 
 /*
