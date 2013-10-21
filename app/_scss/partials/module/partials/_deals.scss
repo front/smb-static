@@ -132,9 +132,15 @@
   .similar-deals { display: none;}
 
   .popular-deals {
-    h3.title {padding-left: 10px;}
+    h3.title {
+      padding-left: 10px;
+      color: $color-text-title-grey;
+    }
     .deal-entry {
+      @include clearfix;
       @include popular-deal;
+      margin-bottom: 10px;
+
     }
 
   }
@@ -154,7 +160,8 @@
       }
 
       .company-info {
-        @include company-show-desktop;
+        margin-top: 20px;
+        @include company-show-desktop($header_bar: false);
       }
     }
 
@@ -195,71 +202,4 @@
   }
 
 }
-
-/*
-// Deal Company Info
-.deal-company-info {
-  width: 100%;
-
-  div {
-    background-color: $color-content-bg;
-
-    p, h3 {
-      margin: 0;
-      padding: 2% 5%;
-
-      &.title {
-        font-weight: bold;
-      }
-
-    }
-  }
-
-  button.collapse {
-    background-color: $color-content-bg;
-    border: none;
-    display: block;
-    margin: 0 auto;
-  }
-
-  img.logo {
-    display: block;
-    margin: 0 auto;
-  }
-
-}
-
-// Popular Deals on Deals/show.html
-.popular-deals {
-
-  header {
-    background-color: $color-headers-bg;
-    height: 40px;
-    width: 100%;
-
-    h3 {
-      color: #fff;
-      text-align: left;
-      margin: 0;
-      padding: 2% 5%;
-    }
-  }
-
-  .deal-entry {
-    @include popular-deal;
-  }
-
-
-}
-
-.similar-deals {
-  display: none;
-}
-
-.company-deals {
-  display: none;
-}
-
-*/
-
 
