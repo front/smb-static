@@ -668,16 +668,16 @@
     .info {
       margin-top: 0;
       width: 100%;
-      height: auto;
+      height: 50%;
       background-color: $color-discount-price-bg;
 
       div {
         display: inline-block;
         width: (100% / 3);
-        height: 40px;
+        height: 45px;
         float: left;
         text-align: center;
-        padding: 2% 0 2% 2%;
+        padding: 10px 0 10px 0;
 
         &.price {
           //font-size: 2em;
