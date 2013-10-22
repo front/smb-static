@@ -1,0 +1,31 @@
+// search#index
+.search {
+  display: none;
+}
+
+.search-results {
+  .deal-entry {
+    @include regular-deal;
+    padding: 10px 0;
+  }
+}
+
+@include breakpoint($breakpoint-tablet-landscape) {
+  .search-results {
+    .deal-entry {
+      float: left;
+      @include regular-deal(100%/3);
+      padding: 10px;
+    }
+  }
+}
+
+
+@include breakpoint($breakpoint-desktop) {
+  .search-results {
+    .deal-entry {
+      @include regular-deal(25%);
+    }
+  }
+}
+
