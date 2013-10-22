@@ -28,12 +28,14 @@
 
 .company-show-deals {
   h2.title {
-    padding-left: 1em;
+    padding-left: 10px;
+    color: $color-text-title-grey;
   }
 
   .deal-entry {
+    @include clearfix;
     @include popular-deal;
-    margin-bottom: 1em;
+    margin-bottom: 10px;
   }
 }
 
@@ -53,8 +55,8 @@
     width: 35%;
     height: auto;
     background-color: $color-webpage-bg;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
     .deal-entry {
       @include popular-deal;
     }
