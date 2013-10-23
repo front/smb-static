@@ -1,77 +1,81 @@
+// Notes:
+// - line-height in use is 1.4
+
 .subscribe {
-  background-color: $color-headers-bg;
-  color: #fff;
+  @include clearfix;
+
   width: 100%;
-  form {
-    width: 100%;
+  margin: 0;
+  padding-bottom: 47px;
 
-    .input {
-      width: 100%;
-      padding-bottom: 10%;
+  background-color: $color-headers-bg;
+  color: $color-white;
 
-      .label {
-        width: 100%;
-        padding: 2% 2%;
-      }
 
-      .email {
-        background-color: #fff;
-        float: left;
-        width: 80%;
-        height: 100%;
-        padding: 2% 2%;
+  label {
+    display: block;
+    padding: 14px;
 
-        input[type="email"] {
-          width: 100%;
-          border: 0;
-        }
-      }
-
-      .submit {
-        display: inline-block;
-        width: 20%;
-        height: 100%;
-        padding: 2% 0;
-        background-color: $color-subscribe-btn-mobile;
-        text-align: center;
-        input[type="submit"] {
-          background-color: $color-subscribe-btn-mobile;
-          border: 0;
-          color: #fff;
-        }
-      }
-    }
+    font-size: 14px;
+    font-weight: 600;
   }
-}
+  input {
+    float: left;
+    vertical-align: top;
+  }
+  input[type=text] {
+    width: percentage(230/300);
+    margin: 0;
+    padding: 10px 13px;
+    border: none;
 
-// 960px
-@include breakpoint($breakpoint-tablet-landscape) {
-  .subscribe {
-    background-color: $color-webpage-bg;
+    background: $color-white;
+    color: $color-blue-dark;
+    font-family: $font-family-sans;
+    font-size: 20px;
+    font-weight: 300;
+  }
+  input[type=submit] {
+    width: percentage(70/300);
+    margin: 0;
+    padding: 15px 13px 14px;
+    border: none;
 
-    form {
+    background-color: $color-subscribe-btn-mobile;
+    color: $color-white;
+    font-size: 16px;
+    font-weight: 600;
+  }
 
-      .input {
-        width: 100%;
-        padding-bottom: 2%;
+  // Breakpoints.
+  // Tablet (landscape)
+  @include breakpoint($breakpoint-tablet-landscape) {
+    padding-bottom: 0;
 
-        .label {
-          float: left;
-          width: 30%;
-          background-color: $color-subscribe-label-bg;
-        }
+    label {
+      float: left;
+      width: percentage(495/1260);
+      height: 58px;
+      padding: 15px 25px;
 
-        .email {
-          width: 50%;
-        }
+      background-color: $color-subscribe-label-bg;
 
-        .submit {
-          background-color: $color-subscribe-btn-desktop;
-          input[type="submit"] {
-            background-color: $color-subscribe-btn-desktop;
-          }
-        }
-      }
+      font-size: 20px;
+      font-weight: 400;
+    }
+    input[type=text] {
+      width: percentage((1260 - 495)/1260);
+      height: 58px;
+      margin-right: em(-108, 20);
+      padding: 15px em(128, 20) 16px 20px;
+    }
+    input[type=submit] {
+      width: em(108, 18);
+      height: 58px;
+      padding: 19px 13px 18px;
+
+      background-color: $color-blue-dark;
+      font-size: 18px;
     }
   }
 }
