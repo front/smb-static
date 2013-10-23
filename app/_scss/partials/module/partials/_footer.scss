@@ -5,14 +5,12 @@ footer.footer {
   background-color: $color-footer-bg;
   color: #fff;
 
-
   .l-footer-left {
     width: 100%;
     float: none;
 
     .deal-categories {
-      background-color: $color-footer--deal-categories-bg;
-
+      background-color: $color-footer-deal-cats-bg;
 
       ul {
         list-style-type: none;
@@ -46,7 +44,6 @@ footer.footer {
     .logo {
       display: none;
     }
-
   }
 
 
@@ -81,10 +78,7 @@ footer.footer {
         input {
           width: 100%;
           height: 100%;
-
         }
-
-
       }
     }
 
@@ -104,15 +98,11 @@ footer.footer {
           max-height: 36px;
           margin-right: 30px;
           margin-bottom: 5px;
-
         }
       }
     }
-
   }
-
 }
-
 
 @include breakpoint($breakpoint-tablet-landscape) {
   footer.footer {
@@ -150,7 +140,6 @@ footer.footer {
           display: inline-block;
         }
       }
-
     }
 
     .l-footer-right {
@@ -167,8 +156,6 @@ footer.footer {
         width: 100%;
         padding-left: 0;
       }
-
     }
-
   }
 }

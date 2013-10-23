@@ -1,65 +1,61 @@
-// Variables partial
+// Variables
 
-// Font Families
+// Font families
 $font-family-serif: 'Cardo', serif;
-$font-family-sans: 'Open Sans', sans-serif;
+$font-family-sans: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 
+// ***** Colors ******
 
-// *****Colors******
+// Standalone
+$color-blue-dark:   #333845;
+$color-blue-marine: #75C7D4;
+$color-pink-red:    #EB2C4A;
+$color-white-blue:  #EDF4F6;
+$color-white:       #FFFFFF;
+$color-gray-purple: #6E7078;
 
-//  General background colors
-$color-headers-bg: #333845;
-$color-content-bg: #ffffff;
-$color-webpage-bg: #edf4f6;
+// Global background
+$color-headers-bg: $color-blue-dark;
+$color-content-bg: $color-white;
+$color-webpage-bg: $color-white-blue;
 
 // Menu
-$color-sub-menu-bg: #75c7d4;
-$color-menu-bg: #333845;
+$color-menu-bg:     $color-blue-dark;
+$color-sub-menu-bg: $color-blue-marine;
 
 // Footer
-$color-footer-bg: #333845;
-$color-footer--deal-categories-bg: #75c7d4;
-$color-footer-send-btn: #eb2c4a;
+$color-footer-bg:           $color-blue-dark;
+$color-footer-deal-cats-bg: $color-blue-marine;
+$color-footer-send-btn:     $color-pink-red;
 
 // Text colors
-$color-text-title: #333845;
-$color-text-content: #b3b4b8;
-$color-text-title-grey: #6e7078;
-$color-text-content-grey: #6e7078;
+$color-text-title:        $color-blue-dark;
+$color-text-content:      #b3b4b8;
+$color-text-title-grey:   $color-gray-purple;
+$color-text-content-grey: $color-gray-purple;
 
 // Deals sections colors
-$color-hot-deal-bg: #0ee205;
-$color-discount-price-bg: #d6dde0;
-$color-btn-bg: #eb2c4a;
-$color-discount-percentage-bg: #75c7d4;
-$color-days-left-bg: #98dae4;
-$color-facebook-bg: #3b5998;
-$color-twitter-bg: #4099ff;
-$color-company-name-text: #6e7078;
-$color-btn-view-all-bg: #eb2c4a;
-$color-deal-info-text: #6e7078;
+$color-hot-deal-bg:            #0ee205;
+$color-discount-price-bg:      #d6dde0;
+$color-btn-bg:                 $color-pink-red;
+$color-discount-percentage-bg: $color-blue-marine;
+$color-days-left-bg:           #98dae4;
+$color-facebook-bg:            #3b5998;
+$color-twitter-bg:             #4099ff;
+$color-company-name-text:      $color-gray-purple;
+$color-btn-view-all-bg:        $color-pink-red;
+$color-deal-info-text:         $color-gray-purple;
 
 // About (learn more) section colors
-$color-about-bg: #75c7d4;
-$color-about-btn: #333845;
+$color-about-bg:  $color-blue-marine;
+$color-about-btn: $color-blue-dark;
 
 // Company
-$color-logo-bg: #eb2c4a;
-$color-more-btn: #75c7d4;
-$color-company-show-text: $color-company-name-text;
-
+$color-logo-bg:           $color-pink-red;
+$color-more-btn:          $color-blue-marine;
+$color-company-show-text: $color-gray-purple;
 
 // Subscribe section
-$color-subscribe-label-bg: #75c7d4;
-$color-subscribe-btn-mobile: #eb2c4a;
-$color-subscribe-btn-desktop: #333845;
-
-
-
-
-
-
-
-
-
-
+$color-subscribe-label-bg:    $color-blue-marine;
+$color-subscribe-btn-mobile:  $color-pink-red;
+$color-subscribe-btn-desktop: $color-blue-dark;
