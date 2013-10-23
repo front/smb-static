@@ -241,7 +241,6 @@
 
   }
 
-
   .info {
     margin-top: 0;
     width: 100%;
@@ -278,7 +277,6 @@
     }
 
   }
-
 }
 
 
@@ -489,7 +487,6 @@
       }
     }
   }
-
   .description {
     position: absolute;
     left: 60%;
@@ -520,7 +517,6 @@
       }
     }
   }
-
   .discount {
     position: absolute;
     left: 60%;
@@ -552,7 +548,6 @@
       margin: 0;
     }
   }
-
   .social {
     position : absolute;
     left: 60%;
@@ -571,26 +566,17 @@
         display: block;
         margin: 0 auto;
       }
-
     }
-
     .facebook {
       background-color: $color-facebook-bg;
     }
-
     .share {
       background-color: $color-content-bg;
     }
-
     .twitter {
       background-color: $color-twitter-bg;
     }
-
-
-
-
   }
-
   .info {
     position: absolute;
     left: 60%;
@@ -626,7 +612,6 @@
         }
       }
     }
-
   }
 
 }
@@ -681,11 +666,9 @@
         &.price {
           //font-size: 2em;
         }
-
         &.old-price {
           text-decoration: line-through;
         }
-
         &.buy {
           float: none;
           text-align: center;
@@ -696,13 +679,9 @@
             text-decoration: none;
           }
         }
-
       }
-
     }
-
   }
-
 }
 
 @mixin deal-info($width: auto) {
@@ -715,13 +694,11 @@
     margin: 0;
     padding: 10px 10px;
   }
-
   .title {
     font-weight: bold;
     font-size: 1.5em;
     color: $color-company-name-text;
   }
-
   button.collapse {
     display: none;
   }

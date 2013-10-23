@@ -2,10 +2,8 @@ body {
   margin: 0;
 }
 
-.l-container {
+%l-container {
   @include clearfix;
-  //@include background-grid;
-  background-color: $color-webpage-bg;
 
   min-width: 300px;
   max-width: 1260px;
@@ -16,6 +14,10 @@ body {
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+.l-container {
+  @extend %l-container;
 }
 
 .l-block {
