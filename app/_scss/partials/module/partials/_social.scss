@@ -1,0 +1,20 @@
+.social-footer-links {
+  @include no-bullets;
+  margin: 0;
+  padding: 0;
+
+  font-size: 16px;
+  font-weight: 300;
+
+  a {
+    color: $color-white;
+    text-decoration: none;
+  }
+  i {
+    display: inline-block;
+  }
+}
+
+.icon-footer-twitter {
+  @include retina-background($footer_icons, 'footer-twitter');
+}

@@ -1,6 +1,9 @@
 // Import modules mixins
 @import 'mixins/base';
 
+// Import icons
+@import 'partials/icons';
+
 // Import modules
 @import 'partials/subscribe';
 @import 'partials/deals';
@@ -9,3 +12,5 @@
 @import 'partials/companies';
 @import 'partials/search_companies';
 @import 'partials/search_page';
+@import 'partials/social';
+

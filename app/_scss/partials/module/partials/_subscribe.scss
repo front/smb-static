@@ -6,7 +6,6 @@
 
   width: 100%;
   margin: 0;
-  padding-bottom: 47px;
 
   background-color: $color-headers-bg;
   color: $color-white;
@@ -23,7 +22,7 @@
     float: left;
     vertical-align: top;
   }
-  input[type=text] {
+  input[type='text'] {
     width: percentage(230/300);
     margin: 0;
     padding: 10px 13px;
@@ -34,24 +33,24 @@
     font-family: $font-family-sans;
     font-size: 20px;
     font-weight: 300;
+    line-height: 1.4;
   }
-  input[type=submit] {
+  input[type='submit'] {
     width: percentage(70/300);
     margin: 0;
-    padding: 15px 13px 14px;
+    padding: 13px;
     border: none;
 
     background-color: $color-subscribe-btn-mobile;
     color: $color-white;
     font-size: 16px;
     font-weight: 600;
+    line-height: 1.4;
   }
 
   // Breakpoints.
   // Tablet (landscape)
   @include breakpoint($breakpoint-tablet-landscape) {
-    padding-bottom: 0;
-
     label {
       float: left;
       width: percentage(495/1260);
@@ -63,13 +62,13 @@
       font-size: 20px;
       font-weight: 300;
     }
-    input[type=text] {
+    input[type='text'] {
       width: percentage((1260 - 495)/1260);
       height: 58px;
       margin-right: em(-108, 20);
       padding: 15px em(128, 20) 16px 20px;
     }
-    input[type=submit] {
+    input[type='submit'] {
       width: em(108, 18);
       height: 58px;
       padding: 19px 13px 18px;
@@ -77,5 +76,15 @@
       background-color: $color-blue-dark;
       font-size: 18px;
     }
+  }
+}
+
+.subscribe-top {
+  padding-bottom: 47px;
+
+  // Breakpoints.
+  // Tablet (landscape)
+  @include breakpoint($breakpoint-tablet-landscape) {
+    padding-bottom: 0;
   }
 }
