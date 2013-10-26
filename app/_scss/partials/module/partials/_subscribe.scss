@@ -22,7 +22,7 @@
     float: left;
     vertical-align: top;
   }
-  input[type="text"] {
+  input[name="email"] {
     width: percentage(230/300);
     margin: 0;
     padding: 10px 13px;
@@ -66,7 +66,7 @@
       font-size: 20px;
       font-weight: 300;
     }
-    input[type="text"] {
+    input[name="email"] {
       width: percentage((1260 - 495)/1260);
       height: 58px;
       margin-right: em(-108, 20);
