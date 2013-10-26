@@ -1,20 +1,35 @@
+.social {
+  .title {
+    margin-bottom: em(22,14);
+  }
+}
 .social-footer-links {
   @include no-bullets;
   margin: 0;
-  padding: 0;
+  padding: 0 0 0 6px;
 
   font-size: 16px;
   font-weight: 300;
 
+  li {
+    margin-bottom: em(10,16);
+  }
   a {
     color: $color-white;
     text-decoration: none;
   }
   i {
     display: inline-block;
+    vertical-align: middle;
+
+    margin-right: 14px;
   }
 }
 
 .icon-footer-twitter {
-  @include retina-background($footer_icons, 'footer-twitter');
+  @include retina-background($icons, 'twitter');
+}
+
+.icon-footer-facebook {
+  @include retina-background($icons, 'facebook');
 }

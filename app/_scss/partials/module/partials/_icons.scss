@@ -1,3 +1,3 @@
 // Sprites
-$footer_icons: 'icons';
-@include sprite-map-generator($footer_icons, 'retina');
+$icons: 'icons';
+@include sprite-map-generator($icons, 'retina');
