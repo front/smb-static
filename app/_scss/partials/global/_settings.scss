@@ -1,3 +1,9 @@
+// IE Support
+$legacy-support-for-ie:  true;
+$legacy-support-for-ie6: false;
+$legacy-support-for-ie7: false;
+$legacy-support-for-ie8: true;
+
 // Breakpoints
 $breakpoints-to-ems: true;
 
@@ -28,7 +34,7 @@ $grids: add-grid(15 at $breakpoint-desktop);
 $gutters: 1/3;
 
 // Include grid-toggle mixin
-@include grid-toggle;
+// @include grid-toggle;
 
 // Typography
 $base-font-size: 14px;

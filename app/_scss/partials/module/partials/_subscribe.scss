@@ -22,7 +22,7 @@
     float: left;
     vertical-align: top;
   }
-  input[type='text'] {
+  input[type="text"] {
     width: percentage(230/300);
     margin: 0;
     padding: 10px 13px;
@@ -39,7 +39,7 @@
       color: $color-blue-dark;
     }
   }
-  input[type='submit'] {
+  input[type="submit"] {
     width: percentage(70/300);
     margin: 0;
     padding: 13px;
@@ -66,13 +66,13 @@
       font-size: 20px;
       font-weight: 300;
     }
-    input[type='text'] {
+    input[type="text"] {
       width: percentage((1260 - 495)/1260);
       height: 58px;
       margin-right: em(-108, 20);
       padding: 15px em(128, 20) 16px 20px;
     }
-    input[type='submit'] {
+    input[type="submit"] {
       width: em(108, 18);
       height: 58px;
       padding: 19px 13px 18px;
