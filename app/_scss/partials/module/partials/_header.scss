@@ -1,0 +1,23 @@
+.header {
+  text-align: center;
+
+  .logo {
+    display: none;
+    margin: 0 auto 60px;
+    padding: 100px 140px;
+
+    background-color: $color-blue-dark;
+    color: $color-white;
+
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1;
+  }
+
+  // Breakpoints.
+  @include breakpoint($breakpoint-tablet-landscape) {
+    .logo {
+      display: inline-block;
+    }
+  }
+}

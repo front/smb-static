@@ -5,15 +5,13 @@ jQuery(document).ready(function($) {
 
   // Main menu
   // Mobile dropdown
-  if ($('header.header nav').length) {
-    var $navHeader = $('header.header nav');
+  $('header.header nav').each(function() {
+    var $nav = $(this);
 
-    $navHeader.each(function() {
-      var $nav = $(this);
-
-      $('.nav--title', $nav).click(function() {
-        $('.menu--dropdown', $nav).slideToggle();
-      });
+    $('.nav--title', $nav).click(function() {
+      $('.menu--dropdown', $nav).slideToggle();
     });
-  };
+  });
+
+  // Desktop slide
 });
