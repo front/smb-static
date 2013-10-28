@@ -1,80 +1,16 @@
 .footer {
-  @include clearfix;
-  width: 100%;
+  @extend %l-container;
+  margin-left: auto;
+  margin-right: auto;
 
   background-color: $color-footer-bg;
   color: $color-white;
 
-  .l-footer-left {
-    width: 100%;
-    float: none;
-
-    .logo {
-      display: none;
-    }
+  // Breakpoints.
+  @include breakpoint($breakpoint-tablet-landscape) {
+    padding-top: 0.7em;
+    border-top: 10px solid $color-blue-marine;
   }
-  .l-footer-right {
-    width: 100%;
-    float: none;
-
-    .subscribe {
-      .title {display: none;}
-
-      form {
-        width: 100%;
-
-        .email-input {
-          float:left;
-          width: 70%;
-          height: 40px;
-        }
-
-        .submit-btn {
-          display: inline-block;
-          width: 30%;
-          height: 40px;
-          background-color: $color-footer-send-btn;
-          input[type="submit"] {
-            background-color: $color-footer-send-btn;
-            color: #fff;
-            border: 0;
-          }
-        }
-
-        input {
-          width: 100%;
-          height: 100%;
-        }
-      }
-    }
-
-    .social {
-      color: #fff;
-      padding-left: 40px;
-      p.title {
-        font-weight: bold;
-      }
-
-      a {
-        color: #fff;
-        text-decoration: none;
-
-        img {
-          max-width: 36px;
-          max-height: 36px;
-          margin-right: 30px;
-          margin-bottom: 5px;
-        }
-      }
-    }
-  }
-}
-
-.footer-container {
-  @extend %l-container;
-
-  margin-left: auto;
-  margin-right: auto;
 }
 
 // Blocks
@@ -85,7 +21,7 @@
   font-weight: 400;
   line-height: em(15,12);
 
-  // Heading
+  // Blocks title
   .title {
     margin: 0 auto em(10,14);
 
@@ -97,60 +33,50 @@
     margin-top: 0;
     margin-bottom: em(8,12);
   }
+
+  // Breakpoints.
+  @include breakpoint($breakpoint-tablet-landscape) {
+    @include float-span(3);
+    padding-left: 0;
+
+    &:nth-child(4n) {
+      @include float-span(3, 'last');
+    }
+    &:nth-child(4n+1) {
+      padding-left: 14px;
+    }
+
+    // Blocks title
+    .title {
+      margin-bottom: em(16,14);
+    }
+  }
+  @include breakpoint($breakpoint-desktop) {
+    @include float-span(4);
+    padding-left: 0;
+
+    &:nth-child(4n) {
+      @include float-span(4, 'last');
+    }
+  }
 }
 
-@include breakpoint($breakpoint-tablet-landscape) {
-  .footer {
-    margin-top: 2em;
+.logo-footer {
+  clear: both;
+  display: none;
 
-    .l-footer-left {
-      width: 75%;
+  // Breakpoints.
+  @include breakpoint($breakpoint-tablet-landscape) {
+    @include float-span(4, 'first');
+    display: block;
+
+    img {
       float: left;
-
-      .deal-categories {
-        width: (100%/3);
-        float: left;
-        background-color: $color-footer-bg;
-
-        ul {
-          padding-top: 16px;
-          padding-bottom: 16px;
-        }
-      }
-
-      .advertise, .other-deals {
-        width: (100%/3);
-        float: left;
-        padding-left: 0;
-        padding-right: 1em;
-      }
-
-      .logo {
-        display: block;
-        clear: both;
-        width: 100%;
-        padding-left: 40px;
-        padding-bottom: 20px;
-        p {
-          display: inline-block;
-        }
-      }
+      vertical-align: top;
+      margin-right: 30px;
     }
-
-    .l-footer-right {
-      width: 25%;
-      float: left;
-
-      .subscribe {
-        width: 100%;
-        background-color: $color-footer-bg;
-        .title { display: block; }
-      }
-
-      .social {
-        width: 100%;
-        padding-left: 0;
-      }
-    }
+  }
+  @include breakpoint($breakpoint-desktop) {
+    @include float-span(5, 'first');
   }
 }

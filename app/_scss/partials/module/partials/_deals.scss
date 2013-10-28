@@ -199,6 +199,11 @@
 // Deals categories
 .deals-categories {
   background-color: $color-footer-deal-cats-bg;
+
+  // Breakpoints.
+  @include breakpoint($breakpoint-tablet-landscape) {
+    background-color: transparent;
+  }
 }
 
 .deals-menu-list {

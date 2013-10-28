@@ -2,6 +2,17 @@
   .title {
     margin-bottom: em(22,14);
   }
+
+  // Breakpoints.
+  @include breakpoint($breakpoint-tablet-landscape) {
+    @include grid-span(3,10);
+
+    padding-left: 0;
+    padding-right: 0;
+  }
+  @include breakpoint($breakpoint-desktop) {
+    @include grid-span(4,13);
+  }
 }
 .social-footer-links {
   @include no-bullets;

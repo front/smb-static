@@ -10,17 +10,10 @@
   background-color: $color-headers-bg;
   color: $color-white;
 
-
-  label {
-    display: block;
-    padding: 14px;
-
-    font-size: 14px;
-    font-weight: 600;
-  }
   input {
     float: left;
     vertical-align: top;
+    overflow: hidden;
   }
   input[name="email"] {
     width: percentage(230/300);
@@ -53,8 +46,25 @@
   }
 
   // Breakpoints.
-  // Tablet (landscape)
   @include breakpoint($breakpoint-tablet-landscape) {
+  }
+}
+
+.subscribe-top {
+  padding-bottom: 47px;
+
+  label {
+    display: block;
+    padding: 14px;
+
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  // Breakpoints.
+  @include breakpoint($breakpoint-tablet-landscape) {
+    padding-bottom: 0;
+
     label {
       float: left;
       width: percentage(495/1260);
@@ -83,12 +93,34 @@
   }
 }
 
-.subscribe-top {
-  padding-bottom: 47px;
+.subscribe-bottom {
+  label {
+    display: none;
+  }
 
   // Breakpoints.
-  // Tablet (landscape)
   @include breakpoint($breakpoint-tablet-landscape) {
-    padding-bottom: 0;
+    label {
+      display: block;
+
+      margin: 0 auto em(19,14);
+
+      color: $color-white;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    input[name="email"] {
+      width: percentage(222/300);
+      padding: 10px 16px;
+
+    }
+    input[type="submit"] {
+      width: percentage(78/300);
+    }
   }
+}
+
+.footer-block.subscribe-footer { // < bad. redo.
+  padding-left: 0;
+  padding-right: 0;
 }
