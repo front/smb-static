@@ -1,0 +1,58 @@
+.nav--main {
+  margin-bottom: 15px;
+
+  h2 {
+    margin: 0;
+    padding: 14px 10px;
+
+    background-color: $color-blue-dark;
+
+    color: $color-white;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: right;
+
+    cursor: pointer;
+
+    i {
+      display: inline-block;
+      margin-left: 6px;
+    }
+  }
+}
+
+.menu--main {
+  display: none;
+
+  @include no-bullets;
+  margin: 0 auto em(26,16);
+  padding: 10px 0;
+
+  background-color: $color-white;
+  font-size: 1em;
+
+  a {
+    display: block;
+    padding: 5px 20px;
+
+    color: $color-blue-dark;
+    text-decoration: none;
+
+    &:hover,
+    &.active {
+      padding-left: 14px;
+      border-left: 6px solid $color-pink-red;
+    }
+    &.active {
+      text-decoration: underline;
+    }
+  }
+  ul {
+    display: none;
+  }
+}
+
+// Icons
+.icon-ui-dropdown {
+  @include retina-background($icons-ui, 'dropdown');
+}

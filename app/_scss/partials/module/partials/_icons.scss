@@ -1,3 +1,6 @@
 // Sprites
 $icons: 'icons';
 @include sprite-map-generator($icons, 'retina');
+
+$icons-ui: 'ui';
+@include sprite-map-generator($icons-ui, 'retina');
