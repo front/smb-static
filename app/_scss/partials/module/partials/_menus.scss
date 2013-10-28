@@ -1,9 +1,9 @@
 .nav--main {
   margin-bottom: 15px;
 
-  h2 {
+  .nav--title {
     margin: 0;
-    padding: 14px 10px;
+    padding: 14px 20px 14px 10px;
 
     background-color: $color-blue-dark;
 
@@ -21,15 +21,42 @@
   }
 }
 
-.menu--main {
+.nav--secondary {
+  margin-bottom: 15px;
+
+  .nav--title {
+    margin: 0 10px;
+    padding: 8px 10px 8px 20px;
+
+    background-color: $color-white;
+
+    color: $color-blue-dark;
+    font-size: 1em;
+    font-weight: 400;
+
+    cursor: pointer;
+
+    i {
+      float: right;
+      display: inline-block;
+      margin: 4px auto 0;
+    }
+  }
+}
+
+.menu--dropdown {
   display: none;
 
   @include no-bullets;
-  margin: 0 auto em(26,16);
+  margin: 0 10px em(26,16);
   padding: 10px 0;
 
   background-color: $color-white;
   font-size: 1em;
+
+  .nav--secondary & {
+    border-top: 1px solid $color-blue-dark;
+  }
 
   a {
     display: block;
@@ -55,4 +82,8 @@
 // Icons
 .icon-ui-dropdown {
   @include retina-background($icons-ui, 'dropdown');
+}
+
+.icon-ui-settings {
+  @include retina-background($icons-ui, 'settings');
 }
