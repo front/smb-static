@@ -11,9 +11,10 @@
   .details {
     width: 100%;
 
-    p.name {
+    .name {
       padding-top: 2%;
       color: $color-company-name-text;
+      font-size: em(20,16); 
     }
 
     .description { display:none; }
@@ -29,6 +30,7 @@
   }
 
   .address {
+    margin-bottom: em(10,16);
     .title { display: none; }
     .info {
       p {
@@ -40,32 +42,30 @@
   .more-info {
     @include clearfix;
     width: 100%;
-    height: 100%;
-    background-color: $color-more-btn;
 
     .logo {
       background-color: $color-logo-bg;
       float: left;
       width: 50%;
-      height: 100%;
 
       img {
         display: block;
         margin: 0 auto;
+        max-height: 55px;
       }
     }
 
     .info-btn {
       float: left;
       width: 50%;
-      height: 100%;
       text-align: center;
-      padding: 1.5em;
 
       a {
-
         color: #fff;
         text-decoration: none;
+        background-color: $color-more-btn;
+        display: block;
+        line-height: 55px;
       }
     }
   }
