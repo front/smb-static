@@ -109,7 +109,7 @@
   position: relative;
   height: auto;
   background-color: $color-content-bg;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 
   .image-container {
     position: relative;
@@ -208,10 +208,9 @@
     }
 
   }
-
 }
 
-@mixin regular-deal($width: auto,$bg-color: $color-webpage-bg) {
+@mixin regular-deal($width: auto, $bg-color: $color-webpage-bg) {
   width: $width;
   position: relative;
   height: auto;
@@ -263,7 +262,6 @@
       }
     }
   }
-
   .info {
     margin-top: 0;
     width: 100%;
@@ -283,13 +281,11 @@
         font-size: em(22,16);
         font-weight: bold;
       }
-
       &.old-price {
         text-decoration: line-through;
         font-size: em(14,16);
         font-weight: bold;
       }
-
       &.buy {
         float: none;
         text-align: center;
@@ -301,12 +297,9 @@
           display: block;
         }
       }
-
     }
-
   }
 }
-
 
 @mixin deal-detail($width: auto) {
   width: $width;

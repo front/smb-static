@@ -32,10 +32,18 @@
       color: $color-white;
       font-weight: 600;
       text-decoration: none;
+
+      @include single-transition(background-color, 0.3s);
+
+      &:hover {
+        background-color: $color-pink-red;
+      }
     }
   }
 
   @include breakpoint($breakpoint-tablet-landscape) {
+    margin-bottom: 55px;
+
     .text {
       width: 80%;
       padding: 19px 26px;
