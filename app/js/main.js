@@ -1,5 +1,13 @@
 // Custom
 jQuery(document).ready(function($) {
+  // Set width using remaining space.
+  $.fn.fitItemWidth = function() {
+    var p = this.parent(),
+        w = p.width() - (this.position().left - p.position().left);
+
+    this.width(w > 0 ? w : 0);
+  };
+
   // Fastclick
   FastClick.attach(document.body);
 
@@ -26,8 +34,9 @@ jQuery(document).ready(function($) {
       var $this = $(this);
 
       $('> a', $this).click(function(e) {
-        var $ul = $('> ul', $this);
         e.preventDefault();
+
+        var $ul = $('> ul', $this);
 
         if ($ul.is(':visible')) {
           $ul.hide('blind', { direction: 'left' }, 600, function() {
@@ -40,6 +49,23 @@ jQuery(document).ready(function($) {
           });
         }
       });
+    });
+  };
+
+  // Search slide/width.
+  if ($('header.header .has-form').length > 0) {
+    var $hasForm = $('header.header .has-form'),
+        resizeTimer = false;
+
+    $hasForm.fitItemWidth();
+
+    $(window).resize(function() {
+      if (resizeTimer !== false) {
+        clearTimeout(resizeTimer);
+      }
+      resizeTimer = setTimeout(function() {
+        $hasForm.fitItemWidth()
+      }, 200);
     });
   };
 });

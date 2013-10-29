@@ -1,6 +1,10 @@
 .nav--main {
   margin-bottom: 15px;
+  overflow: hidden;
+
   text-align: left;
+
+  background-color: #ccc;
 
   .nav--title {
     margin: 0;
@@ -88,6 +92,9 @@
       text-decoration: underline;
     }
   }
+  .has-form {
+    display: none;
+  }
   ul {
     display: none;
   }
@@ -97,12 +104,21 @@
   // Breakpoints.
   @include breakpoint($breakpoint-tablet-landscape) {
     display: block;
+    position: relative;
+    padding: 0;
+
+    max-height: 48px; // hack to 'expand' on medium res, in 1 line.
+    overflow: hidden;
+
     @include horizontal-list(0);
 
-    background-color: transparent;
+    background-color: $color-white;
     font-size: em(18,16);
 
     a {
+      position: relative;
+      z-index: 2;
+
       padding: 12px 28px 11px;
 
       border-right: 1px solid $color-webpage-bg;
@@ -125,7 +141,6 @@
     .is-highlighted a {
       font-weight: 600;
     }
-
     .has-children {
       position: relative;
 
@@ -134,6 +149,7 @@
         content: '';
         display: inline-block;
         position: absolute;
+        z-index: 3;
         top: em(20,18);
         right: -7px;
 
@@ -147,18 +163,28 @@
         float: left;
       }
     }
+    .has-form {
+      display: block;
+      position: static;
+      width: 100%;
+      margin-right: -100%;
+      overflow: hidden;
+    }
 
     // 2nd Level.
     ul {
       display: none;
-
       float: left;
       padding-left: 0;
 
       a {
         position: relative;
+        padding: 12px 20px 11px;
         background-color: $color-blue-marine;
 
+        &:hover {
+          padding: 12px 20px 11px;
+        }
         &.active,
         &:active {
           display: inline-block;
@@ -181,6 +207,48 @@
   @include breakpoint($breakpoint-tablet-landscape) {}
 }
 
+// Form
+.nav--search {
+  position: static;
+
+  input {
+    font-size: em(20, 18);
+    font-weight: 300;
+  }
+  input[name="search"] {
+    float: left;
+    width: 100%;
+    padding: 10px 20px 11px;
+    border: none;
+    vertical-align: top;
+
+    background-color: $color-white;
+    color: $color-blue-dark;
+    @include single-transition(background-color, 0.3s);
+
+    @include placeholder {
+      color: $color-blue-dark;
+    }
+    &:focus {
+      background-color: transparentize($color-blue-dark, 0.98);
+      outline: none;
+    }
+  }
+  input[type="submit"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    width: em(80,20);
+    margin: 0 0 0 -100%;
+    padding: 10px 0 11px;
+    border: none;
+
+    background-color: $color-subscribe-btn-mobile;
+    color: $color-white;
+  }
+}
+
 // Icons
 .icon-ui-dropdown {
   @include retina-background($icons-ui, 'dropdown');
@@ -193,9 +261,11 @@
 .icon-ui-location {
   @include retina-background($icons-ui, 'location');
 }
+
 .icon-ui-add {
   @include retina-background($icons-ui, 'add');
 }
+
 .icon-ui-info {
   @include retina-background($icons-ui, 'info');
 }
