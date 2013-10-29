@@ -68,4 +68,13 @@ jQuery(document).ready(function($) {
       }, 200);
     });
   };
+
+  // Close block
+  $('.close-block').each(function() {
+    var $this = $(this);
+
+    $('i', $this).click(function() {
+      $this.parent().fadeOut('fast');
+    });
+  });
 });
