@@ -295,13 +295,16 @@
     .title {
       display: block;
       font-weight: bold;
-      font-size : 1.5em;
+      font-size: em(26,16);
       padding: 10px 10px;
       color: $color-company-name-text;
+      margin-top: em(15,26);
     }
 
     .description {
+      font-size: em(16,16);
       width: 75%;
+      margin-bottom: em(20,16);
       padding-top: 20px;
       color: $color-company-show-text;
       background-color: $color-content-bg;
@@ -312,6 +315,7 @@
   .address, .contact {
     width: 50%;
     float: left;
+    margin-bottom: em(15,16);
 
     .title {
       p {
@@ -331,9 +335,10 @@
     position: absolute;
     top: 0;
     right: 10px;
-    font-weight: bold;
+    font-weight: 400;
     padding: 10px 10px;
     color: #fff;
+    font-size: em(20,16);
 
 
   }
