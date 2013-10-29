@@ -639,37 +639,54 @@
 
   .image-container {
     position: relative;
-    width: 40%;
-    height: 90px;
+    width: 33%;
+    height: 125px;
     float: left;
+    overflow: hidden;
+
+    @media (max-width: 23em) {
+      width: 20%;
+    }
 
 
     img {
-      width: 100%;
-      height: 100%;
+      min-width: 100%;
+      max-width: inherit;
+      min-height: 100%;
     }
   }
 
   .details {
-    width: 60%;
+    width: 67%;
     float: left;
-    height: 90px;
+    
+    @media (max-width: 23em) {
+      width: 80%;
+    }
 
     .description {
       background-color: $color-content-bg;
-      padding: 10px 0 10px 0;
-      height: 50%;
-      .company { display: none;}
+      padding: 10px 5px 10px 10px;
+      
+      .company { 
+        font-size: em(18,16);
+      }
+      
+      .title {
+        font-size: em(22,16);
+        font-weight: 700;
+      }
+
       p {
         margin: 0;
-        text-align: center;
       }
     }
 
     .info {
       margin-top: 0;
+      padding-left: 10px;
       width: 100%;
-      height: 50%;
+      line-height: 50px;
       background-color: $color-discount-price-bg;
 
       div {
@@ -677,23 +694,24 @@
         width: (100% / 3);
         height: 45px;
         float: left;
-        text-align: center;
-        padding: 10px 0 10px 0;
 
         &.price {
-          //font-size: 2em;
+          font-size: em(18,16);
+          font-weight: 700;
         }
         &.old-price {
           text-decoration: line-through;
+          font-size: em(14,16);
         }
         &.buy {
           float: none;
           text-align: center;
-          background-color: $color-btn-bg;
 
           .btn-buy {
+            background-color: $color-btn-bg;
             color: #fff;
             text-decoration: none;
+            display: block;
           }
         }
       }
