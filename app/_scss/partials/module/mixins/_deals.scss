@@ -58,7 +58,7 @@
     position: absolute;
     margin-top: 0;
     padding-left: 10px;
-    line-height: 55px;
+    line-height: 50px;
     top: 100%;
     width: 100%;
     height: auto;
@@ -67,10 +67,7 @@
     div {
       display: inline-block;
       width: (100% / 3);
-      // height: auto;
       float: left;
-      // text-align: center;
-      // padding: 10px 0;
 
       &.price {
         font-size: em(22,16);
@@ -86,7 +83,6 @@
       &.buy {
         float: none;
         text-align: center;
-        // background-color: $color-btn-bg;
 
         .btn-buy {
           color: #fff;
@@ -225,7 +221,7 @@
 
     .price {
       position: absolute;
-      bottom: 40%;
+      bottom: 45%;
       right:0%;
       background-color: rgba($color-content-bg,0.75);
       white-space: nowrap;  // todo: find a better way to calc div width
@@ -233,7 +229,7 @@
       overflow: hidden;
 
       p {
-        font-size: 1.5em;
+        font-size: em(18,16);
         margin: 0;
         padding: 5px 15px 5px 5px;
       }
@@ -244,13 +240,18 @@
       width:100%;
       background-color: rgba($color-content-bg,0.75);
       bottom: 0;
+      padding: em(10,16);
 
       p {
         margin: 0;
-        padding: 2% 0 2% 2%;
 
         &.title {
           font-weight: bold;
+          font-size: em(20,16);
+        }
+
+        &.company {
+          font-size: em(18,16);
         }
 
         &.text { display: none; }
@@ -262,6 +263,8 @@
   .info {
     margin-top: 0;
     width: 100%;
+    padding-left: 10px;
+    line-height: 50px;
     height: auto;
     background-color: $color-discount-price-bg;
 
@@ -270,25 +273,28 @@
       width: (100% / 3);
       height: 40px;
       float: left;
-      text-align: center;
-      padding: 2% 0 2% 2%;
+
 
       &.price {
-        //font-size: 2em;
+        font-size: em(22,16);
+        font-weight: bold;
       }
 
       &.old-price {
         text-decoration: line-through;
+        font-size: em(14,16);
+        font-weight: bold;
       }
 
       &.buy {
         float: none;
         text-align: center;
-        background-color: $color-btn-bg;
 
         .btn-buy {
           color: #fff;
           text-decoration: none;
+          background-color: $color-btn-bg;
+          display: block;
         }
       }
 
