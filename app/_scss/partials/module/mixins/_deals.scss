@@ -3,6 +3,7 @@
   position: relative;
   height: auto;
   background-color: $color-content-bg;
+  margin-bottom: 70px;  
 
   .image-container {
     position: relative;
@@ -13,7 +14,7 @@
 
     .price {
       position: absolute;
-      bottom: 40%;
+      bottom: 45%;
       right:0%;
       background-color: rgba($color-content-bg,0.75);
       white-space: nowrap;  // todo: find a better way to calc div width
@@ -21,7 +22,7 @@
       overflow: hidden;
 
       p {
-        font-size: 1.5em;
+        font-size: em(18,16);
         margin: 0;
         padding: 5px 15px 5px 5px;
       }
@@ -33,13 +34,18 @@
     width:100%;
     background-color: rgba($color-content-bg,0.75);
     bottom: 0;
+    padding: em(10,16);
 
     p {
       margin: 0;
-      padding: 2% 0 2% 2%;
 
       &.title {
         font-weight: bold;
+        font-size: em(20,16);
+      }
+
+      &.company {
+        font-size: em(18,16);
       }
 
       &.text { display: none; }
@@ -51,7 +57,9 @@
   .info {
     position: absolute;
     margin-top: 0;
-    bottom: -40px;
+    padding-left: 10px;
+    line-height: 55px;
+    top: 100%;
     width: 100%;
     height: auto;
     background-color: $color-discount-price-bg;
@@ -59,27 +67,32 @@
     div {
       display: inline-block;
       width: (100% / 3);
-      height: auto;
+      // height: auto;
       float: left;
-      text-align: center;
-      padding: 10px 0;
+      // text-align: center;
+      // padding: 10px 0;
 
       &.price {
-        //font-size: 2em;
+        font-size: em(22,16);
+        font-weight: bold;
       }
 
       &.old-price {
         text-decoration: line-through;
+        font-size: em(14,16);
+        font-weight: bold;
       }
 
       &.buy {
         float: none;
         text-align: center;
-        background-color: $color-btn-bg;
+        // background-color: $color-btn-bg;
 
         .btn-buy {
           color: #fff;
           text-decoration: none;
+          background-color: $color-btn-bg;
+          display: block;
         }
       }
 
@@ -95,6 +108,7 @@
   position: relative;
   height: auto;
   background-color: $color-content-bg;
+  margin-bottom: 50px;
 
   .image-container {
     position: relative;
@@ -115,7 +129,7 @@
       overflow: hidden;
 
       p {
-        font-size: 1.5em;
+        font-size: em(32,16);
         margin: 0;
         padding: 5px 15px 5px 5px;
       }
@@ -130,16 +144,20 @@
     height: auto;
     top: 0;
     bottom: 40px;
-    padding: 10% 1%;
+    padding: 10% 2%;
     background-color: $color-content-bg;
 
 
     p {
       margin: 0;
-      padding: 2% 0 2% 2%;
 
       &.title {
-        font-weight: bold;
+        font-size: em(32,16);
+      }
+
+      &.company {
+        font-size: em(28,16);
+        margin-bottom: em(17,16);
       }
 
       &.text {
@@ -156,6 +174,7 @@
     left: 60%;
     width: 40%;
     height: auto;
+    top: auto;
     bottom: 0;
     background-color: $color-discount-price-bg;
 
@@ -165,10 +184,9 @@
       height: auto;
       float: left;
       text-align: center;
-      padding: 10px 0;
 
       &.price {
-        //font-size: 2em;
+        // font-size: 2em;
       }
 
       &.old-price {
