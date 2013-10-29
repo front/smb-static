@@ -14,4 +14,32 @@ jQuery(document).ready(function($) {
   });
 
   // Desktop slide
+  if ($('header.header .menu--main').length > 0) {
+    var $mainMenu = $('header.header .menu--main');
+
+    $('.has-children', $mainMenu).each(function() {
+      // Only slide, if on desktop/wide tablet.
+      if ($(window).width() < 960) {
+        return true;
+      };
+
+      var $this = $(this);
+
+      $('> a', $this).click(function(e) {
+        var $ul = $('> ul', $this);
+        e.preventDefault();
+
+        if ($ul.is(':visible')) {
+          $ul.hide('blind', { direction: 'left' }, 600, function() {
+            $this.removeClass('open');
+          });
+        }
+        else {
+          $ul.show('blind', { direction: 'left' }, 600, function() {
+            $this.addClass('open');
+          });
+        }
+      });
+    });
+  };
 });

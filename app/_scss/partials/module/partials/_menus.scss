@@ -139,6 +139,39 @@
 
         color: $color-white;
       }
+      &.open:after {
+        @include retina-background($icons-ui, 'children-close');
+        right: 0;
+      }
+      a {
+        float: left;
+      }
+    }
+
+    // 2nd Level.
+    ul {
+      display: none;
+
+      float: left;
+      padding-left: 0;
+
+      a {
+        position: relative;
+        background-color: $color-blue-marine;
+
+        &.active,
+        &:active {
+          display: inline-block;
+          width: 6px;
+          position: absolute;
+          top: 10px;
+          left: 0;
+          bottom: 10px;
+
+          background-color: $color-pink-red;
+          content: '';
+        }
+      }
     }
   }
 }
