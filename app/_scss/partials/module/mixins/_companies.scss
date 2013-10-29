@@ -187,14 +187,14 @@
 
       p {
         color: #fff;
-        text-align: center;
-        padding: 10px 0;
+        padding: 10px 5%;
+        font-size: em(20,16);
       }
     }
 
     .logo {
       position: absolute;
-      top: 50px;
+      top: 55px;
       width: 100%;
 
       img {
@@ -208,6 +208,7 @@
     .description {
       padding-top: 100px;
       color: $color-company-show-text;
+      font-size: em(14,16);
     }
 
   }
@@ -220,6 +221,7 @@
       p {
         padding-top: 3%;
         padding-bottom: 3%;
+        font-weight: 700;
       }
     }
 
