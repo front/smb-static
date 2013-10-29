@@ -1,46 +1,58 @@
 .about-site-info {
-  width: 100%;
-  height: 100%;
-  background-color: $color-about-bg;
+  @include clearfix;
   position: relative;
+  width: 100%;
+  background-color: $color-about-bg;
 
   .text {
     float: left;
-    width: 65%;
-    padding: 10px;
-    height: 100%;
+    padding: 14px 16px;
     color: #fff;
 
     p {
       margin: 0;
+      font-size: em(20,16);
+      font-weight: 300;
+      line-height: 1;
+    }
+    p:last-child {
+      display: none;
     }
   }
 
   .btn {
-    float: none;
-    display: inline-block;
-    width: 35%;
-    height: 100%;
+    float: right;
     background-color: $color-about-btn;
     text-align: center;
-    padding: 10px;
 
     .btn-learn-more {
-      color: #fff;
+      display: block;
+      padding: 13px 20px;
+
+      color: $color-white;
+      font-weight: 600;
       text-decoration: none;
     }
   }
 
-}
-
-@include breakpoint($breakpoint-tablet-landscape) {
-  .about-site-info {
+  @include breakpoint($breakpoint-tablet-landscape) {
     .text {
       width: 80%;
-    }
+      padding: 19px 26px;
 
+      p {}
+      p:first-child {
+        display: none;
+      }
+      p:last-child {
+        display: block;
+      }
+    }
     .btn {
-      width: 20%;
+      .btn-learn-more {
+        font-size: em(18,16);
+        padding: 16px 25px 17px;
+      }
     }
   }
 }

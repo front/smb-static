@@ -2,11 +2,9 @@
 
 // Main Deal
 .front-deal {
- @include main-deal;
-}
+  @include main-deal;
 
-@include breakpoint($breakpoint-tablet-landscape) {
-  .front-deal {
+  @include breakpoint($breakpoint-tablet-landscape) {
     @include main-deal-desktop;
   }
 }
