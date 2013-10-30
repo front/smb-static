@@ -36,3 +36,11 @@
     vertical-align: top;
   }
 }
+
+.mobile-only {}
+
+@include breakpoint($breakpoint-tablet-landscape) {
+  .mobile-only {
+    display: none !important;
+  }
+}
