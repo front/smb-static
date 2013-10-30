@@ -16,7 +16,7 @@
     color: $color-category-hover;
   }
   
-  @include breakpoint($breakpoint-tablet-portrait) {
+  @include breakpoint($breakpoint-tablet-landscape) {
     padding: 10px 15px;
     font-size: em(20,16);
     display: inline-block;
