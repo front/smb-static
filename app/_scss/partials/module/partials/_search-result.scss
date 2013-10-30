@@ -1,0 +1,34 @@
+// Search result wrapper
+.search-result {
+  margin: 20px 0 10px;
+}
+
+// Search result text wrapper
+.search-result-text {
+  font-size: em(14,16);
+  margin-bottom: em(10,14);
+
+  p {
+    margin: 0 0 em(5,14);
+  }
+
+  @include breakpoint($breakpoint-tablet-portrait) {
+    font-size: em(16,16);
+    float: left;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  @include breakpoint($breakpoint-tablet-landscape) {
+    font-size: em(20,16);
+  }
+}
+
+// Search result filter wrapper
+.search-result-filter {
+  @include breakpoint($breakpoint-tablet-portrait) {
+    float: right;
+  }
+}

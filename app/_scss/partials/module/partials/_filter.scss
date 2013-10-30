@@ -1,0 +1,49 @@
+
+// Filter select
+.filter-select {
+  background-color: $color-btn-primary;
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 8px 12px;
+  position: relative;
+
+  @include single-transition(background-color, 0.3s);
+
+  &:hover,
+  &:focus {
+    background-color: $color-pink-red;
+  }
+
+  .icon-ui-dropdown {
+    display: inline-block;
+    margin-left: em(10px,16);
+    position: absolute;
+    right: 12px;
+    top: 44%;
+
+    @include breakpoint($breakpoint-tablet-portrait) {
+      position: relative;
+      top: -2px;
+      right: auto;
+    }
+  }
+  
+  @include breakpoint($breakpoint-tablet-portrait) {
+    padding: 10px 15px;
+    font-size: em(20,16);
+    display: inline-block;
+  }
+}
+
+// Filter label
+.filter-label {
+  font-weight: 700;
+  font-size: em(14,16);
+
+
+  @include breakpoint($breakpoint-tablet-portrait) {
+    margin-right: 10px;
+    font-size: em(20,16);   
+  }
+}
