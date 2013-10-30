@@ -94,27 +94,34 @@
 
 // Deals listing
 .deals-listing {
+  @include clearfix;
+  clear: both;
+
   .deal-entry {
     @include regular-deal;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
-}
 
-@include breakpoint($breakpoint-tablet-landscape) {
-  .deals-listing {
-    @include clearfix;
+  @include breakpoint($breakpoint-tablet-landscape) {
+
     .deal-entry {
-      float: left;
-      padding: 10px 10px;
-      @include regular-deal(100%/3);
+      @include float-span(4);
+
+      &:nth-child(3n) {
+        @include float-span(4, 'omega');
+      }
     }
   }
-}
-
-@include breakpoint($breakpoint-desktop) {
-  .deals-listing {
+  @include breakpoint($breakpoint-desktop) {
     .deal-entry {
-      @include regular-deal(25%);
+      @include float-span(4);
+
+      &:nth-child(3n) {
+        @include float-span(4); // reset.
+      }
+      &:nth-child(4n) {
+        @include float-span(4, 'omega');
+      }
     }
   }
 }

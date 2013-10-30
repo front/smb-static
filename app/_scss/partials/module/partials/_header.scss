@@ -4,14 +4,20 @@
   .logo {
     display: none;
     margin: 0 auto 60px;
-    padding: 100px 140px;
 
     background-color: $color-blue-dark;
-    color: $color-white;
 
     font-size: 18px;
     font-weight: 300;
     line-height: 1;
+
+    a {
+      display: block;
+      padding: 100px 140px;
+
+      color: $color-white;
+      text-decoration: none;
+    }
   }
 
   // Breakpoints.
