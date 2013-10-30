@@ -97,6 +97,12 @@
           font-weight: 600;
           text-align: center;
           text-decoration: none;
+
+          @include single-transition(background-color, 0.3s);
+
+          &:hover {
+            background-color: darken($color-pink-red, 15);
+          }
         }
       }
     }
@@ -104,6 +110,9 @@
 }
 
 @mixin main-deal-desktop($width: auto) {
+  $main_deal_desktop_left: (800/1260) * 100%;
+  $main_deal_desktop_right: 100% - $main_deal_desktop_left;
+
   @include clearfix;
   width: $width;
   position: relative;
@@ -114,7 +123,7 @@
   .image-container {
     position: relative;
     float: left;
-    width: 60%;
+    width: $main_deal_desktop_left;
 
     img {
       width: 100%;
@@ -122,8 +131,8 @@
 
     .price {
       position: absolute;
-      bottom: 40%;
-      right:0%;
+      bottom: 56px;
+      right: 0;
       background-color: rgba($color-content-bg,0.75);
       white-space: nowrap;  // todo: find a better way to calc div width
       width: auto;
@@ -132,20 +141,18 @@
       p {
         font-size: em(32,16);
         margin: 0;
-        padding: 5px 15px 5px 5px;
+        padding: 30px 30px 11px 95px;
       }
     }
-
   }
-
   .description {
     position: absolute;
-    left: 60%;
-    width:40%;
+    left: $main_deal_desktop_left;
+    width: $main_deal_desktop_right;
     height: auto;
     top: 0;
-    bottom: 40px;
-    padding: 10% 2%;
+    bottom: 56px;
+    padding: 8.75% 1.6% 0 2.4%;
     background-color: $color-content-bg;
 
 
@@ -155,58 +162,52 @@
       &.title {
         font-size: em(32,16);
       }
-
       &.company {
         font-size: em(28,16);
-        margin-bottom: em(17,16);
+        margin-bottom: em(16,28);
       }
-
       &.text {
         display: block;
         color: $color-deal-info-text;
       }
     }
   }
-
-
-
   .info {
+    background-color: $color-discount-price-bg;
     position: absolute;
-    left: 60%;
-    width: 40%;
-    height: auto;
     top: auto;
     bottom: 0;
-    background-color: $color-discount-price-bg;
+    left: $main_deal_desktop_left;
+    width: $main_deal_desktop_right;
+    height: 56px;
+    text-align: right;
+    overflow: hidden;
 
     div {
+      float: none;
       display: inline-block;
-      width: (100% / 3);
+      vertical-align: top;
+
+      width: auto;
       height: auto;
-      float: left;
+
       text-align: center;
 
       &.price {
-        // font-size: 2em;
+        margin-right: 20px;
       }
-
       &.old-price {
-        text-decoration: line-through;
+        margin-right: 20px;
+        padding-top: 4px;
+        vertical-align: bottom;
       }
-
       &.buy {
-        float: none;
-        text-align: center;
-        background-color: $color-btn-bg;
-
         .btn-buy {
-          color: #fff;
-          text-decoration: none;
+          padding-left: 16px;
+          padding-right: 16px;
         }
       }
-
     }
-
   }
 }
 
