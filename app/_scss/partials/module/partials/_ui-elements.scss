@@ -22,3 +22,17 @@
 .close-bottom {
   margin-bottom: -38px;
 }
+
+.scroll-bottom {
+  clear: both;
+  display: block;
+  width: 100%;
+  padding-top: 5px;
+  text-align: center;
+
+  i {
+    @include retina-background($icons-ui, 'scroll-bottom');
+    display: inline-block;
+    vertical-align: top;
+  }
+}

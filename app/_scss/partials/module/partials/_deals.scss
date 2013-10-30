@@ -103,7 +103,6 @@
   }
 
   @include breakpoint($breakpoint-tablet-landscape) {
-
     .deal-entry {
       @include float-span(4);
 
@@ -130,40 +129,22 @@
 // Deals Show
 // *******
 .deal-show {
+
   .deal-detail {
     @include deal-detail(100%);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
-
   .deal-company-info {
     .deal-info {
       @include deal-info;
       margin-bottom: 20px;
     }
-
     .company-info{
       @include company-show;
     }
   }
 
-  .similar-deals { display: none;}
-
-  .popular-deals {
-    h3.title {
-      padding-left: 10px;
-      color: $color-text-title-grey;
-    }
-    .deal-entry {
-      @include clearfix;
-      @include popular-deal;
-      margin-bottom: 10px;
-
-    }
-  }
-}
-
-@include breakpoint($breakpoint-tablet-landscape) {
-  .deal-show {
+  @include breakpoint($breakpoint-tablet-landscape) {
     .deal-detail {
       @include deal-detail-desktop(100%);
     }
@@ -180,37 +161,68 @@
         @include company-show-desktop($header_bar: false);
       }
     }
-
-    .popular-deals {
-      float: left;
-      width: 40%;
-
-      .deal-entry {
-        @include popular-deal;
-      }
-    }
-
-    .similar-deals {
-      @include clearfix;
-      display: block;
-      clear: both;
-      width: 100%;
-      .deal-entry {
-        float: left;
-        padding: 10px 10px;
-        @include regular-deal(100%/3);
-      }
-    }
-
   }
 }
 
-@include breakpoint($breakpoint-desktop) {
-  .deal-show {
 
-    .similar-deals {
-      .deal-entry {
-        @include regular-deal(25%);
+.popular-deals {
+  h3.title {
+    margin-bottom: 15px;
+    padding: 13px 14px;
+    background-color: $color-blue-dark;
+    color: $color-white;
+
+    font-size: 1em;
+    font-weight: 600;
+  }
+  .deal-entry {
+    @include clearfix;
+    @include popular-deal;
+    margin-bottom: 15px;
+  }
+
+  @include breakpoint($breakpoint-tablet-landscape) {
+    float: left;
+    width: 40%;
+
+    .deal-entry {}
+  }
+}
+
+.similar-deals {
+  display: none;
+  clear: both;
+  @include clearfix;
+
+  @include breakpoint($breakpoint-tablet-landscape) {
+    display: block;
+    width: 100%;
+    margin-bottom: 50px;
+
+    .title {
+      font-size: em(18,16);
+      margin-bottom: 1em;
+    }
+
+    .deal-entry {
+      @include regular-deal;
+      @include float-span(4);
+      margin-bottom: 15px;
+
+      &:nth-child(3n) {
+        @include float-span(4, 'omega');
+      }
+    }
+  }
+  @include breakpoint($breakpoint-desktop) {
+    .deal-entry {
+      @include float-span(4);
+
+      &:nth-child(3n) {
+        @include float-span(4); // reset.
+      }
+      &:nth-child(4n) {
+        @include float-span(4, 'omega');
       }
     }
   }
