@@ -1,0 +1,23 @@
+.category-nav {
+  margin: 20px 0;
+}
+
+.nav-category {
+  margin: em(10,16) 0;
+
+  @include breakpoint($breakpoint-tablet-portrait) {
+    margin: 0;
+  }
+}
+
+.category-nav-tags {
+  @include breakpoint($breakpoint-tablet-portrait) {
+    float: left;
+  }
+}
+
+.category-nav-filter {
+  @include breakpoint($breakpoint-tablet-portrait) {
+    float: right;
+  }
+}

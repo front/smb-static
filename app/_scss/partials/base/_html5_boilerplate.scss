@@ -53,21 +53,25 @@ textarea {
 //    `:before` to contain the top-margins of child elements.
 
 
-.clearfix:before,
-.clearfix:after {
+.clearfix {
+  // For IE 6/7 only
+  // Include this rule to trigger hasLayout and contain floats.
+  *zoom: 1;
+  
+  &:before,
+  &:after {
     content: " "; /* 1 */
     display: table; /* 2 */
-}
-
-.clearfix:after {
+  }
+  
+  &:after {
     clear: both;
+  }
 }
 
 
-// For IE 6/7 only
-// Include this rule to trigger hasLayout and contain floats.
+
 
 
 .clearfix {
-    *zoom: 1;
 }
