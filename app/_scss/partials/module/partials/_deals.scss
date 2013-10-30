@@ -129,7 +129,6 @@
 // Deals Show
 // *******
 .deal-show {
-
   .deal-detail {
     @include deal-detail(100%);
     margin-bottom: 15px;
@@ -150,24 +149,27 @@
     }
 
     .deal-company-info {
-      float: left;
-      width: 60%;
-      .deal-info {
-        @include deal-info;
-      }
+      @include float-span(7);
 
+      .deal-info {
+        @include deal-info-desktop;
+      }
       .company-info {
         margin-top: 20px;
         @include company-show-desktop($header_bar: false);
       }
     }
   }
+  @include breakpoint($breakpoint-desktop) {
+    .deal-company-info {
+      @include float-span(10);
+    }
+  }
 }
-
 
 .popular-deals {
   h3.title {
-    margin-bottom: 15px;
+    margin: 0 auto 15px;
     padding: 13px 14px;
     background-color: $color-blue-dark;
     color: $color-white;
@@ -182,10 +184,18 @@
   }
 
   @include breakpoint($breakpoint-tablet-landscape) {
-    float: left;
-    width: 40%;
+    @include float-span(5, 'omega');
 
-    .deal-entry {}
+    h3.title {
+      margin: 0 auto 15px;
+      padding: 7px 0 0;
+      background-color: transparent;
+      color: $color-blue-dark;
+      font-weight: 700;
+    }
+  }
+  @include breakpoint($breakpoint-desktop) {
+    @include float-span(6, 'omega');
   }
 }
 
