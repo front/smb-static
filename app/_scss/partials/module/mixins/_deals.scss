@@ -652,28 +652,25 @@
 
   .image-container {
     position: relative;
-    width: 33%;
+    width: 33.333333%;
     height: 125px;
     float: left;
     overflow: hidden;
 
-    @media (max-width: 23em) {
-      width: 20%;
+    @media (max-width: $breakpoint-tablet-landscape) {
+      // width: 20%;
+      height: 100px;
     }
     img {
-      min-width: 100%;
-      max-width: inherit;
-      min-height: 100%;
+      width: 100%;
+      max-width: 100%;
+      height: 100%;
     }
   }
-
   .details {
-    width: 67%;
+    width: 66.666666%;
     float: left;
 
-    @media (max-width: 23em) {
-      width: 80%;
-    }
     .description {
       background-color: $color-content-bg;
       padding: 10px 5px 10px 10px;
@@ -687,6 +684,12 @@
       }
       p {
         margin: 0;
+      }
+    }
+
+    @media (max-width: $breakpoint-tablet-landscape) {
+      .company {
+        display: none;
       }
     }
 

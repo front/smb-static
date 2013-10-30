@@ -83,70 +83,25 @@ title: Deal Show
       <header class="deals">
         <h3 class="title">Popular deals</h2>
       </header>
-      <div class="deal-entry">
-        <div class="image-container">
-          <img alt="" src="../img/deal-image-medium.jpg" />
-        </div>
-        <div class="details">
-          <div class="description">
-            <p class="title">50% off on juicers</p>
-            <p class="company">The juice Co.</p>
-          </div>
-          <div class="info">
-            <div class="price">249 kr</div>
-            <div class="old-price">veil 495kr</div>
-            <div class="buy"><a href="#" class="btn-buy">Buy now</a></div>
-          </div>
-        </div>
-      </div>
-      <div class="deal-entry">
-        <div class="image-container">
-          <img alt="" src="../img/deal-image-medium.jpg" />
-        </div>
-        <div class="details">
-          <div class="description">
-            <p class="title">50% off on juicers</p>
-            <p class="company">The juice Co.</p>
-          </div>
-          <div class="info">
-            <div class="price">249 kr</div>
-            <div class="old-price">veil 495kr</div>
-            <div class="buy"><a href="#" class="btn-buy">Buy now</a></div>
-          </div>
-        </div>
-      </div>
-      <div class="deal-entry">
-        <div class="image-container">
-          <img alt="" src="../img/deal-image-medium.jpg" />
-        </div>
-        <div class="details">
-          <div class="description">
-            <p class="title">50% off on juicers</p>
-            <p class="company">The juice Co.</p>
-          </div>
-          <div class="info">
-            <div class="price">249 kr</div>
-            <div class="old-price">veil 495kr</div>
-            <div class="buy"><a href="#" class="btn-buy">Buy now</a></div>
-          </div>
-        </div>
-      </div>
+
+      {% for i in (1..4) %}
         <div class="deal-entry">
-        <div class="image-container">
-          <img alt="" src="../img/deal-image-medium.jpg" />
-        </div>
-        <div class="details">
-          <div class="description">
-            <p class="title">50% off on juicers</p>
-            <p class="company">The juice Co.</p>
+          <div class="image-container">
+            <img alt="" src="../img/deal-image-thumb.png" />
           </div>
-          <div class="info">
-            <div class="price">249 kr</div>
-            <div class="old-price">veil 495kr</div>
-            <div class="buy"><a href="#" class="btn-buy">Buy now</a></div>
+          <div class="details">
+            <div class="description">
+              <p class="title">50% off on juicers</p>
+              <p class="company">The juice Co.</p>
+            </div>
+            <div class="info">
+              <div class="price">249 kr</div>
+              <div class="old-price">veil 495kr</div>
+              <div class="buy"><a href="#" class="btn-buy">Buy now</a></div>
+            </div>
           </div>
         </div>
-      </div>
+      {% endfor %}
     </div>
 
     <div class="similar-deals">
