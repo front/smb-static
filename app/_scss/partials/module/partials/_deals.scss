@@ -1,4 +1,4 @@
-//  Frontpage
+// Frontpage
 
 // Main Deal
 .front-deal {
@@ -9,7 +9,7 @@
   }
 }
 
-// Latest and Popular Deals
+// Latest and featured deals
 .frontpage-latest-deals,
 .frontpage-featured-deals {
   @include clearfix;
@@ -40,7 +40,7 @@
 
       a {
         display: block;
-        padding: 10px 40px;
+        padding: 10px 30px;
 
         background-color: $color-btn-view-all-bg;
         color: $color-white;
@@ -48,6 +48,12 @@
         font-size: em(14,16);
         font-weight: 700;
         text-decoration: none;
+
+        @include single-transition(background-color, 0.3s);
+
+        &:hover {
+          background-color: darken($color-btn-view-all-bg, 15);
+        }
       }
     }
   }
@@ -64,6 +70,13 @@
       }
     }
   }
+}
+
+.icon-ui-arrow {
+  @include retina-background($icons-ui, 'children-open');
+
+  display: inline-block;
+  margin-left: 15px;
 }
 
 // **********

@@ -222,79 +222,91 @@
     img {
       width: 100%;
     }
-
     .price {
       position: absolute;
-      bottom: 45%;
-      right:0%;
-      background-color: rgba($color-content-bg,0.75);
-      white-space: nowrap;  // todo: find a better way to calc div width
+      bottom: 40%;
+      right: 0%;
+      background-color: rgba($color-content-bg, 0.85);
+      white-space: nowrap; // todo: find a better way to calc div width
       width: auto;
       overflow: hidden;
 
       p {
         font-size: em(18,16);
+        font-weight: 300;
         margin: 0;
-        padding: 5px 15px 5px 5px;
+        padding: 9px 30px 8px 12px;
       }
     }
 
     .description {
       position: absolute;
-      width:100%;
-      background-color: rgba($color-content-bg,0.75);
+      width: 100%;
       bottom: 0;
-      padding: em(10,16);
+      padding: em(10,16) em(14,16);
+      background-color: rgba($color-content-bg, 0.85);
 
       p {
         margin: 0;
 
         &.title {
-          font-weight: bold;
           font-size: em(20,16);
+          font-weight: 700;
+          line-height: em(25,20);
         }
-
         &.company {
           font-size: em(18,16);
+          font-weight: 300;
         }
-
-        &.text { display: none; }
+        &.text {
+          display: none;
+        }
       }
     }
   }
   .info {
-    margin-top: 0;
     width: 100%;
-    padding-left: 10px;
-    line-height: 50px;
     height: auto;
+    margin-top: 0;
+    padding-left: 18px;
+    line-height: 56px;
     background-color: $color-discount-price-bg;
 
     div {
       display: inline-block;
-      width: (100% / 3);
-      height: 40px;
-      float: left;
+      vertical-align: top;
 
+      width: (100% / 3);
+      float: left;
 
       &.price {
         font-size: em(22,16);
-        font-weight: bold;
+        font-weight: 700;
       }
       &.old-price {
-        text-decoration: line-through;
+        vertical-align: bottom;
         font-size: em(14,16);
-        font-weight: bold;
+        font-weight: 700;
+        text-decoration: line-through;
       }
       &.buy {
         float: none;
-        text-align: center;
 
         .btn-buy {
-          color: #fff;
-          text-decoration: none;
-          background-color: $color-btn-bg;
           display: block;
+          background-color: $color-btn-bg;
+          color: $color-white;
+
+          font-size: em(18,16);
+          font-weight: 600;
+          text-align: center;
+          text-decoration: none;
+
+          @include single-transition(background-color, 0.3s);
+
+          &:hover {
+            background-color: darken($color-pink-red, 15);
+          }
         }
       }
     }
@@ -652,7 +664,7 @@
   .details {
     width: 67%;
     float: left;
-    
+
     @media (max-width: 23em) {
       width: 80%;
     }
@@ -660,11 +672,11 @@
     .description {
       background-color: $color-content-bg;
       padding: 10px 5px 10px 10px;
-      
-      .company { 
+
+      .company {
         font-size: em(18,16);
       }
-      
+
       .title {
         font-size: em(22,16);
         font-weight: 700;
