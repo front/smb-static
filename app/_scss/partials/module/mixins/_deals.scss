@@ -657,19 +657,22 @@
     float: left;
     overflow: hidden;
 
-    @media (max-width: $breakpoint-tablet-landscape) {
-      // width: 20%;
-      height: 100px;
+    @media (max-width: 23em) {
+      width: 20%;
     }
     img {
-      width: 100%;
-      max-width: 100%;
-      height: 100%;
+      min-width: 100%;
+      max-width: inherit;
+      min-height: 100%;
     }
   }
   .details {
     width: 66.666666%;
     float: left;
+
+    @media (max-width: 23em) {
+      width: 80%;
+    }
 
     .description {
       background-color: $color-content-bg;
@@ -684,12 +687,6 @@
       }
       p {
         margin: 0;
-      }
-    }
-
-    @media (max-width: $breakpoint-tablet-landscape) {
-      .company {
-        display: none;
       }
     }
 
